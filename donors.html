@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en" data-chorus-v4 data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Halyard International — Donors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ Chorus v4 design tokens (authoritative: chorus-front-end@robinsingh/design-system-canvas-builder) ============ */
+[data-chorus-v4]{
+  --v4-primary:#7c3aed; --v4-primary-alt:#a78bfa; --v4-primary-hover:#8b46f0; --v4-primary-active:#6d28d9;
+  --v4-brand-gradient:linear-gradient(135deg,#7c3aed,#a78bfa);
+  --v4-bg:#0a0a0a; --v4-surface:#111111; --v4-surface-2:#161616; --v4-border:#222222; --v4-border-soft:#1f1f1f;
+  --v4-text-1:#ffffff; --v4-text-2:rgba(255,255,255,.65); --v4-text-3:rgba(255,255,255,.45); --v4-text-4:rgba(255,255,255,.28);
+  --v4-state-success:#38c793; --v4-state-warning:#f17b2c; --v4-state-error:#df1c41; --v4-state-info:#375dfb;
+  --v4-purple-12:rgba(124,58,237,.16); --v4-purple-20:rgba(124,58,237,.28);
+  --grid:rgba(255,255,255,.08); --neutral:rgba(255,255,255,.30); --accent:#a78bfa;
+}
+[data-chorus-v4][data-theme='light']{
+  --v4-bg:#ffffff; --v4-surface:#faf9fb; --v4-surface-2:#ffffff; --v4-border:#e7e5ea; --v4-border-soft:#efedf2;
+  --v4-text-1:#12101a; --v4-text-2:rgba(18,16,26,.72); --v4-text-3:rgba(18,16,26,.5); --v4-text-4:rgba(18,16,26,.32);
+  --v4-purple-12:rgba(124,58,237,.10); --v4-purple-20:rgba(124,58,237,.25);
+  --grid:rgba(18,16,26,.09); --neutral:rgba(18,16,26,.34); --accent:#6d28d9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{
+  background:var(--v4-bg); color:var(--v4-text-1);
+  font-family:'Geist','Geist Sans',ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.5;
+}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ---- header ---- */
+header.top{border-bottom:1px solid var(--v4-border);position:sticky;top:0;background:color-mix(in srgb,var(--v4-bg) 88%,transparent);z-index:20;backdrop-filter:blur(8px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;letter-spacing:-.01em}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--v4-brand-gradient);box-shadow:0 0 10px rgba(124,58,237,.55)}
+.toggle{font:inherit;font-size:12px;color:var(--v4-text-2);background:var(--v4-surface);border:1px solid var(--v4-border);border-radius:8px;padding:6px 12px;cursor:pointer}
+.toggle:hover{color:var(--v4-text-1);border-color:var(--accent)}
+.nav{display:flex;gap:4px;margin-left:26px;margin-right:auto}
+.nav a{font-size:13px;font-weight:500;color:var(--v4-text-2);text-decoration:none;padding:6px 12px;border-radius:8px}
+.nav a:hover{color:var(--v4-text-1)}
+.nav a.on{color:var(--accent);background:var(--v4-purple-12)}
+
+/* ---- hero ---- */
+.hero{padding:72px 0 40px;border-bottom:1px solid var(--v4-border)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(34px,5vw,56px);font-weight:600;letter-spacing:-.03em;line-height:1.02;margin:16px 0 18px;max-width:16ch}
+.hero .lede{font-size:17px;color:var(--v4-text-2);max-width:60ch;line-height:1.6}
+.strip{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border:1px solid var(--v4-border);border-radius:14px;overflow:hidden;background:var(--v4-surface)}
+.strip .cell{flex:1 1 150px;padding:18px 20px;border-right:1px solid var(--v4-border)}
+.strip .cell:last-child{border-right:0}
+.strip .n{font-size:26px;font-weight:600;letter-spacing:-.02em}
+.strip .n em{font-style:normal;color:var(--accent)}
+.strip .k{font-size:12px;color:var(--v4-text-3);margin-top:4px}
+
+/* ---- sections ---- */
+section.job{padding:56px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-num{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.1em}
+.sec-head h2{font-size:26px;font-weight:600;letter-spacing:-.02em}
+.sec-sub{color:var(--v4-text-3);font-size:14px;margin:0 0 26px;max-width:66ch}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.grid .span2{grid-column:1 / -1}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+
+/* ---- card ---- */
+.card{position:relative;background:var(--v4-surface);border:1px solid var(--v4-border);border-radius:16px;padding:22px 22px 18px;display:flex;flex-direction:column;min-width:0}
+.card .chip{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:11px;font-weight:600;color:var(--accent);background:var(--v4-purple-12);border:1px solid var(--v4-purple-20);border-radius:6px;padding:2px 8px;margin-bottom:12px}
+.card h3{font-size:16px;font-weight:600;letter-spacing:-.01em;line-height:1.25;margin-bottom:3px}
+.card .cap{font-size:12.5px;color:var(--v4-text-3);margin-bottom:16px;line-height:1.45}
+.card .plot{margin-top:auto}
+.card .read{font-size:12.5px;color:var(--v4-text-2);border-top:1px solid var(--v4-border);margin-top:16px;padding-top:12px;line-height:1.5}
+.card .read b{color:var(--v4-text-1);font-weight:600}
+.dl{position:absolute;top:12px;right:12px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--v4-text-3);background:transparent;border:1px solid transparent;border-radius:8px;cursor:pointer;opacity:0;transition:opacity .15s,color .15s,background .15s,border-color .15s}
+.card:hover .dl,.dl:focus-visible{opacity:1}
+.dl:hover,.dl:focus-visible{color:var(--accent);background:var(--v4-purple-12);border-color:var(--v4-purple-20)}
+.dl:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.dl svg{width:14px;height:14px}
+.dl.busy svg{animation:dlpulse .8s ease-in-out infinite}
+.dl.done{color:var(--v4-state-success);opacity:1}
+@keyframes dlpulse{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.35;transform:translateY(2px)}}
+@media(hover:none){.dl{opacity:.55}}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.t1{fill:var(--v4-text-1)} .t2{fill:var(--v4-text-2)} .t3{fill:var(--v4-text-3)}
+.axis{stroke:var(--grid);stroke-width:1}
+.lbl{font-size:12px} .val{font-size:12px;font-weight:600} .sm{font-size:10.5px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px;font-size:12px;color:var(--v4-text-2)}
+.legend .sw{display:inline-flex;align-items:center;gap:7px}
+.legend .box{width:11px;height:11px;border-radius:3px}
+
+/* ---- stat tiles ---- */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--v4-border);border:1px solid var(--v4-border);border-radius:12px;overflow:hidden}
+.tiles.t5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--v4-surface-2);padding:18px 16px}
+.tile .n{font-size:23px;font-weight:600;letter-spacing:-.02em;color:var(--accent)}
+.tile .k{font-size:11.5px;color:var(--v4-text-3);margin-top:5px;line-height:1.35}
+
+/* ---- tooltip ---- */
+#tt{position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;background:var(--v4-surface-2);border:1px solid var(--v4-border);border-radius:8px;padding:8px 11px;font-size:12px;color:var(--v4-text-1);box-shadow:0 12px 32px -8px rgba(0,0,0,.25);z-index:50;max-width:240px}
+#tt .k{color:var(--v4-text-3);font-size:11px}
+rect[data-tip],circle[data-tip],line[data-tip]{cursor:crosshair}
+
+.card.ev{padding:16px 16px 12px}
+.card.ev h3{font-size:14px}
+.card.ev .cap{font-size:11.5px;margin-bottom:10px}
+.evhead{grid-column:1/-1;font-size:12px;font-weight:600;color:var(--v4-text-3);letter-spacing:.1em;text-transform:uppercase;margin:14px 0 -4px;border-top:1px dashed var(--v4-border);padding-top:18px}
+footer{border-top:1px solid var(--v4-border);margin-top:64px;padding:28px 0 56px}
+footer .wrap{color:var(--v4-text-3);font-size:12.5px;line-height:1.6}
+footer b{color:var(--v4-text-2)}
+a{color:var(--accent)}
+
+/* ---- demo additions ---- */
+.demo{font-size:10.5px;font-weight:600;color:var(--v4-state-warning);background:rgba(241,123,44,.12);border:1px solid rgba(241,123,44,.30);border-radius:6px;padding:3px 8px;letter-spacing:.02em;white-space:nowrap}
+.nav{margin-left:22px}
+table.rec{width:100%;border-collapse:collapse;font-size:12.5px}
+table.rec th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--v4-text-3);font-weight:600;padding:0 10px 9px 0;border-bottom:1px solid var(--v4-border);vertical-align:bottom}
+table.rec td{padding:11px 10px 11px 0;border-bottom:1px solid var(--v4-border-soft);vertical-align:top;color:var(--v4-text-2)}
+table.rec td.ttl{color:var(--v4-text-1);font-weight:500}
+table.rec td.rng{white-space:nowrap;font-weight:600;color:var(--v4-text-1)}
+.badge{display:inline-block;font-size:10.5px;font-weight:600;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.badge.now{color:#0f7a58;background:rgba(56,199,147,.16)}
+.badge.pilot{color:#a4590f;background:rgba(241,123,44,.16)}
+.badge.test{color:var(--accent);background:var(--v4-purple-12)}
+[data-theme='dark'] .badge.now{color:#6fe0b6} [data-theme='dark'] .badge.pilot{color:#f6a765}
+@media(max-width:980px){.brand span.nm{display:none}}
+
+</style>
+</head>
+<body>
+<div id="tt"></div>
+<header class="top"><div class="wrap">
+  <div class="brand"><span class="dot"></span> Chorus <span style="color:var(--v4-text-3);font-weight:400">&times;</span> <span class="nm">Halyard International</span></div>
+  <nav class="nav"><a href="index.html">Findings</a><a href="supporters.html">Supporters</a><a href="donors.html" class="on">Donors</a><a href="calculator.html">Opportunity Calculator</a></nav>
+  <span class="demo">Sample data &middot; fictional organization</span>
+  <button class="toggle" id="themeBtn" style="margin-left:10px">&#9686; Dark</button>
+</div></header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Audience Intelligence Study &middot; Sustainers and annual givers</div>
+    <h1>The recurring stream, and what it costs to lose it.</h1>
+    <p class="lede" id="lede"></p>
+    <div class="strip" id="strip"></div>
+  </section>
+</div>
+
+<main class="wrap" id="main"></main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script id="halyard-model" type="application/json">{"base":{"org":"Halyard International","study_from":"2025-09","study_to":"2026-08","list_size":2140000,"mailed":1318000,"ever_given":268000,"lifetime_giving":84300000,"sends_per_mo":2.43,"avg_gift":68.0,"deliveries":38432880,"supporter_months":15816000,"onetime_gifts_yr":64846,"onetime_rev":4409528.0,"annual_email_rev":14959928.0},"rates":{"gift":0.0041,"action":0.0062,"inactive":0.021,"unsub":0.0093},"sustainers":{"active_plans":31400,"avg_plan_gift":28.0,"stop_rate_mo":0.0263,"young_hazard":[0.045,0.052,0.048,0.039,0.033,0.029],"plan_value":1064.638783269962,"young_plan_value":977.8204268802484,"annual_rev":10550400.0,"annual_stops":8594.915375472574,"value_after_unsub":741.5229269496942,"unsub_cost":323.11585632026777},"effects":{"align_multiple":1.6,"interest_halflife_w":6,"volume_unsub_or":1.19,"policy_gift_lift":0.31,"policy_unsub_lift":0.24,"handle_gift_lift":0.23,"post_gift_silence":0.6,"surge_second_gift":0.14,"other_second_gift":0.38,"surge_with_followup":0.24},"mix":{"appeal_share":0.55,"known_interest":0.58,"already_aligned":0.31,"appeal_rate_mult":1.3,"policy_share":0.09,"policy_noclick":0.74,"costly_vol_share":0.08,"costly_unsub_share":0.19,"costly_rev_share":0.04,"new_donors":46000,"surge_acquired":0.41,"warm_window_gifts":62000,"warm_asked_today":0.22,"warm_conv_in":0.044,"warm_conv_out":0.019,"warn_recall":0.44,"warn_save_rate":0.11},"scenarios":[{"name":"Low","adopt":0.25,"overlap":0.06,"total":847866,"pct":0.05667577672881525},{"name":"Central","adopt":0.5,"overlap":0.12,"total":1587493,"pct":0.10611634791778174},{"name":"High","adopt":0.75,"overlap":0.19,"total":2191823,"pct":0.1465129121819373}],"bands":[{"label":"Never clicked or acted this year","n":1041000,"per_person":2.1,"total":2186100},{"label":"Infrequent: clicked or acted 1 or 2 times","n":238000,"per_person":21.5,"total":5117000},{"label":"Engaged: 3 or more clicks or actions","n":39000,"per_person":196.0,"total":7644000}],"funnel":{"ever_on_list":3180000,"subscribed":2140000,"emailed":1318000,"joined_yr":286000},"donors":{"annual_givers":78000,"gave_again_next_year":0.29,"plans_started_yr":9850,"warnings":[["A failed payment in the last 90 days",4.6,3.8,5.6],["Unsubscribed while the plan is active",3.4,2.7,4.3],["Two sends in a row with no open",2.9,2.4,3.5],["No click in thirteen weeks",2.2,1.9,2.6],["The monthly amount was lowered",1.9,1.4,2.5],["The plan is under four months old",1.8,1.6,2.1]],"risk_deciles":[44,17,11,8,6,5,3,3,2,1],"anniversary":[3.1,2.8,3.4,4.1,4.6,5.2,5.8,6.4,7.9,9.7,13.4,21.2,6.1,3.2,1.6,1.5]},"categories":[{"k":"Never gave","n":1050000,"kind":"neutral"},{"k":"Disengaged (no open or click all year)","n":1041000,"kind":"neutral"},{"k":"Has a readable topic interest","n":765000,"kind":"route"},{"k":"Enough click history to align on content","n":412000,"kind":"route"},{"k":"Engaged non-donors","n":198000,"kind":"alt"},{"k":"Low-tier donors (under $50)","n":147000,"kind":"donor"},{"k":"Emergency-only givers","n":113000,"kind":"donor"},{"k":"Active donors (gave in the last year)","n":112000,"kind":"donor"},{"k":"Mid-tier donors ($50 to under $250)","n":89000,"kind":"donor"},{"k":"Annual givers (gave this year, no plan)","n":78000,"kind":"donor"},{"k":"High-tier donors ($250 and more)","n":32000,"kind":"donor"},{"k":"Sustainers","n":31400,"kind":"donor"}],"unsub_risk_deciles":[38,18,12,9,7,5,4,3,2,2],"derived":{"unaligned_10k":18.494229661552126,"aligned_10k":29.590767458483402,"gift_value":108.45627376425855,"sustainer_bonus_per_gift":40.456273764258555,"unsub_cost":20.967241365019596,"inactive_cost":11.531982750760779,"inactive_return":0.45,"email_driven_plan_share":0.35,"unsub_groups":[{"k":"Never given","n":1050000,"propensity":1.15,"share":0.8936183439309439,"value":9.3,"contrib":8.31},{"k":"Gave once","n":118000,"propensity":0.62,"share":0.05414254082152203,"value":95.0,"contrib":5.14},{"k":"Gave more than once","n":79000,"propensity":0.38,"share":0.022216499117852534,"value":210.0,"contrib":4.67},{"k":"Lapsed giver","n":39600,"propensity":0.85,"share":0.024910305140137118,"value":48.0,"contrib":1.2},{"k":"Sustainer","n":31400,"propensity":0.22,"share":0.00511231098954448,"value":323.12,"contrib":1.65}],"annual_unsubs":147089},"opportunities":[{"id":"o1","title":"Route topical appeals to known interests","badge":"Act now","owner":"Content + email","confidence":"Measured, large base","does":"Appeals go out unrouted today except by accident. Score every appeal against each supporter's readable topic interest and send the aligned version.","measured":"Aligned appeals gave at 1.6x the unaligned rate, with topic, reading level, and month held constant, among supporters with a readable interest.","sized":"Appeal volume x the share of the file with a readable interest x the share not already landing on it by accident.","pilot":"Hold back 10% of the known-interest pool as an unrouted control for two months. Read gift rate per 1,000 appeal sends. Powered to detect a 20% lift.","addressable":8459461,"adopt_lo":0.55,"adopt_hi":0.85,"per_adopt":1018086.9714308872,"bonus_share":0.37301921189174025,"lo":559948,"hi":865374,"lo_plain":351077,"hi_plain":542573,"bonus_lo":208871,"bonus_hi":322801},{"id":"o2","title":"Ask for the sustainer plan inside the 90-day warm window","badge":"Act now","owner":"Sustainer team","confidence":"Measured, large base","does":"Add a plan ask to the thank-you series for every gift from a supporter who does not already have one, inside 90 days.","measured":"Conversion to a plan was 4.4% inside 90 days of a gift against 1.9% outside it, with gift size and supporter tenure held constant.","sized":"One-time gifts from supporters without a plan, minus the 22% already receiving a warm-window ask.","pilot":"Randomize the ask on or off for 90 days of incoming gifts. Read plan starts at 120 days, and value the plans on the young-plan stop curve, not the program average.","addressable":48360,"adopt_lo":0.5,"adopt_hi":0.85,"per_adopt":1182184.8960982203,"bonus_share":0.0,"lo":591092,"hi":1004857,"lo_plain":591092,"hi_plain":1004857,"bonus_lo":0,"bonus_hi":0},{"id":"o3","title":"A “where your money went” follow-up within three weeks of an emergency gift","badge":"Act now (pilot)","owner":"Emergency response + email","confidence":"Measured, smaller base","does":"Inside three weeks of an emergency gift, send one message naming what the money reached. No ask.","measured":"Emergency-acquired supporters who received such a message gave a second gift at 24% against 14% for those who did not. The comparison is observational, not randomized.","sized":"First-time givers acquired inside an emergency appeal window.","pilot":"This one is a pilot because the comparison is observational. Randomize the follow-up across the next emergency cohort and read second-gift rate at six and twelve months.","addressable":18860,"adopt_lo":0.55,"adopt_hi":0.9,"per_adopt":345621.33231939154,"bonus_share":0.22076337651774822,"lo":190092,"hi":311059,"lo_plain":148126,"hi_plain":242389,"bonus_lo":41965,"bonus_hi":68670},{"id":"o4","title":"Strategic suppression of the costliest kinds of send","badge":"Act now","owner":"Email","confidence":"Measured, large base","does":"Identify the kinds of send carrying unsubscribes out of proportion to what they raise, and hold them back from the lowest-propensity half of the audience.","measured":"8% of volume carries 19% of unsubscribes while raising 4% of revenue.","sized":"The volume in those send kinds, with the revenue forgone taken off the saving.","pilot":"Suppress for a randomly chosen half of the low-propensity audience for one quarter. Read unsubscribes and revenue per 1,000 on both halves.","addressable":3074630,"adopt_lo":0.45,"adopt_hi":0.78,"per_adopt":514161.15622130793,"bonus_share":0.0,"lo":231373,"hi":401046,"lo_plain":231373,"hi_plain":401046,"bonus_lo":0,"bonus_hi":0},{"id":"o5","title":"Sustainer stop-warning list","badge":"Test first","owner":"Sustainer team","confidence":"Model score, needs a holdout","does":"Score active plans weekly on the six warning signs and route the top decile to a save contact.","measured":"The score places 44% of the year's stops in its top decile. The save rate itself is an assumption, not a measurement.","sized":"The year's plan stops that the score would have flagged, times an assumed save rate.","pilot":"Required before anyone counts this. Randomize the save contact within the flagged decile, hold out 30%, and read plan survival at 90 days.","addressable":3782,"adopt_lo":0.35,"adopt_hi":0.65,"per_adopt":442883.2439863283,"bonus_share":0.0,"lo":155009,"hi":287874,"lo_plain":155009,"hi_plain":287874,"bonus_lo":0,"bonus_hi":0},{"id":"o6","title":"Policy-framed copy only to supporters with a prior click","badge":"Test first","owner":"Content","confidence":"Measured, smaller base","does":"Route policy-framed sends only to supporters with a prior click on policy content, and send the field-work version to everyone else.","measured":"Policy framing raised the gift rate 31% among supporters with a prior policy click. Among everyone else the gift effect could not be told from zero and unsubscribe odds rose 24%.","sized":"Policy-framed volume x the share going to supporters with no prior policy click.","pilot":"Randomize the routing rule across policy sends for one quarter. Read unsubscribes and gift rate per 1,000 separately for each audience.","addressable":2559630,"adopt_lo":0.55,"adopt_hi":0.88,"per_adopt":105000.86465514854,"bonus_share":0.19789560433162903,"lo":57750,"hi":92401,"lo_plain":46322,"hi_plain":74115,"bonus_lo":11429,"bonus_hi":18286}],"combined":{"gross_lo":1785264,"gross_hi":2962611,"overlap_lo":0.08,"overlap_hi":0.19,"lo":1642443,"hi":2399715,"pct_lo":0.10978949898689352,"pct_hi":0.1604095287089617},"charts":{"segments":[{"k":"Never given","v":1050000},{"k":"Gave once","v":118000},{"k":"Gave more than once","v":79000},{"k":"Sustainers","v":31400},{"k":"Lapsed givers","v":39600}],"leaving":{"inactive":332136,"unsub":147089},"second_gift":{"surge":[4.1,7.0,9.1,10.6,11.6,12.4,12.9,13.3,13.6,13.8,13.9,14.0],"other":[11.1,19.1,24.7,28.7,31.6,33.6,35.1,36.1,36.8,37.4,37.7,38.0],"followup":[7.0,12.0,15.6,18.1,20.0,21.2,22.2,22.8,23.3,23.6,23.8,24.0]},"volume":[{"sends":1,"rate":0.602},{"sends":2,"rate":0.716},{"sends":3,"rate":0.852},{"sends":4,"rate":1.014},{"sends":5,"rate":1.207},{"sends":6,"rate":1.436},{"sends":7,"rate":1.709},{"sends":8,"rate":2.034}],"post_gift":[{"k":"Within a week","v":11.8},{"k":"8 to 14 days","v":10.9},{"k":"15 to 21 days","v":9.4},{"k":"22 days or more","v":7.1}],"decay":[{"w":0,"v":29.6,"lift":11.1},{"w":2,"v":27.3,"lift":8.8},{"w":4,"v":25.5,"lift":7.0},{"w":6,"v":24.0,"lift":5.5},{"w":8,"v":22.9,"lift":4.4},{"w":10,"v":22.0,"lift":3.5},{"w":12,"v":21.3,"lift":2.8}],"decay_base":18.5,"per1k":{"raised":115,"at_risk":80,"sustainer":275,"linked":34,"raised_with_plans":145,"attr_share":0.3},"hb":{"m":["Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug"],"ev":[null,null,null,"Year end",null,"Earthquake appeal",null,null,null,null,"Cyclone appeal",null],"rev":[919,1050,1256,1800,984,2259,1106,956,900,1012,1631,1087],"unsub":[11.6,12.0,12.8,16.6,10.5,14.1,11.6,10.9,10.5,11.2,13.5,11.7],"spp":[2.1,2.3,2.5,3.3,2.0,3.0,2.3,2.1,2.0,2.2,2.8,2.3]},"levers":[{"n":"Route appeals to a known interest","aud":12260088.719999999,"eff":60,"k":"conversion"},{"n":"Sustainer ask in the warm window","aud":62000,"eff":132,"k":"conversion"},{"n":"Follow up an emergency gift","aud":18860.0,"eff":71,"k":"retention"},{"n":"Hold back the costliest sends","aud":3074630.4,"eff":19,"k":"retention"},{"n":"Volume ceiling","aud":38432880,"eff":19,"k":"retention"},{"n":"Dollar handles to prior givers","aud":268000,"eff":23,"k":"copy"},{"n":"Policy framing to prior clickers","aud":3458959.1999999997,"eff":31,"k":"copy"}],"send_kinds":[{"k":"Emergency appeal","share":0.14,"now":346,"then":240},{"k":"Year-end appeal","share":0.06,"now":284,"then":296},{"k":"General fund appeal","share":0.21,"now":124,"then":137},{"k":"Sustainer ask","share":0.05,"now":102,"then":82},{"k":"Single-issue appeal","share":0.2,"now":72,"then":79},{"k":"Advocacy or petition","share":0.16,"now":15,"then":20},{"k":"Field update, no ask","share":0.1,"now":8,"then":6},{"k":"Newsletter","share":0.08,"now":5,"then":7}],"ask_kinds":[{"k":"Emergency appeal","share":0.14,"now":346,"then":240},{"k":"Year-end appeal","share":0.06,"now":284,"then":296},{"k":"General fund appeal","share":0.21,"now":124,"then":137},{"k":"Sustainer ask","share":0.05,"now":102,"then":82},{"k":"Single-issue appeal","share":0.2,"now":72,"then":79}],"nonask_share":34,"rev_1k_all":115,"plans":[{"m":"Sep","started":714,"stopped":706},{"m":"Oct","started":745,"stopped":720},{"m":"Nov","started":807,"stopped":706},{"m":"Dec","started":1256,"stopped":748},{"m":"Jan","started":683,"stopped":790},{"m":"Feb","started":1039,"stopped":734},{"m":"Mar","started":760,"stopped":706},{"m":"Apr","started":714,"stopped":692},{"m":"May","started":667,"stopped":677},{"m":"Jun","started":729,"stopped":692},{"m":"Jul","started":993,"stopped":720},{"m":"Aug","started":745,"stopped":706}],"hazard":[{"month":1,"rate":4.5},{"month":2,"rate":5.2},{"month":3,"rate":4.8},{"month":4,"rate":3.9},{"month":5,"rate":3.3},{"month":6,"rate":2.9},{"month":7,"rate":2.6},{"month":8,"rate":2.6},{"month":9,"rate":2.6},{"month":10,"rate":2.6},{"month":11,"rate":2.6},{"month":12,"rate":2.6}],"groups":[{"k":"Sustainers","n":31400,"value":1065,"total":33441000,"share":0.6972249442278423},{"k":"Gave more than once","n":79000,"value":118,"total":9322000,"share":0.19435815107478682},{"k":"Gave once","n":118000,"value":34,"total":4012000,"share":0.08364781185497154},{"k":"Lapsed givers","n":39600,"value":30,"total":1188000,"share":0.02476909284239935}],"annual_givers":78000,"align":{"unaligned":18.5,"aligned":29.6},"handles":[{"k":"No prior gift","v":3,"grey":true},{"k":"Gave under $50","v":15},{"k":"Gave $50 to $250","v":27},{"k":"Gave more than $250","v":46}],"policy":[{"k":"Prior click on policy content","v":31},{"k":"Everyone else","v":-4,"grey":true}]},"generated":"2026-09-14"}</script>
+<script>
+
+/* ================= model ================= */
+const M=JSON.parse(document.getElementById('halyard-model').textContent);
+const B_=M.base, R_=M.rates, S_=M.sustainers, C_=M.charts, D_=M.derived, E_=M.effects, DN_=M.donors;
+function fmt$(n){return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+Math.round(n/1e3)+'K':'$'+Math.round(n)}
+
+/* ================= chart engine (self-contained, DS-rooted) ================= */
+const PURPLE='#7c3aed', PALT='#a78bfa', PDARK='#6d28d9', GREEN='#38c793', RED='#df1c41', BLUE='#375dfb', ORANGE='#f17b2c';
+const tt=document.getElementById('tt');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function fmtN(n){return n>=1e6?(n/1e6).toFixed(n>=1e7?0:2)+'M':n>=1e3?Math.round(n/1e3)+'K':(''+n)}
+document.addEventListener('mousemove',e=>{ if(tt.style.opacity==='1'){tt.style.left=(e.clientX+14)+'px';tt.style.top=(e.clientY+14)+'px';}});
+function bindTips(root){
+  root.querySelectorAll('[data-tip]').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{tt.innerHTML=el.getAttribute('data-tip');tt.style.opacity='1';});
+    el.addEventListener('mouseleave',()=>{tt.style.opacity='0';});
+  });
+}
+const svg=(w,h,inner)=>`<svg viewBox="0 0 ${w} ${h}" role="img">${inner}</svg>`;
+
+/* vertical bars: groups=[{label, bars:[{v,color,vlabel}]}], grouped + signed(diverging) */
+function barsV(groups,{unit='',h=250,maxOverride=null,fmt=v=>v}={}){
+  const W=520,padL=8,padR=8,padT=18,padB=42, plotH=h-padT-padB;
+  const vals=groups.flatMap(g=>g.bars.map(b=>b.v));
+  const mx=maxOverride??Math.max(...vals,0), mn=Math.min(...vals,0);
+  const span=(mx-mn)||1; const y0=padT+plotH*(mx/span);
+  const gw=(W-padL-padR)/groups.length; let s='';
+  s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${y0}" y2="${y0}"/>`;
+  groups.forEach((g,i)=>{
+    const n=g.bars.length, bw=Math.min(64,(gw-16)/n), gx=padL+i*gw+(gw-bw*n)/2;
+    g.bars.forEach((b,j)=>{
+      const bh=Math.abs(b.v)/span*plotH, x=gx+j*bw, y=b.v>=0?y0-bh:y0;
+      s+=`<rect x="${x+3}" y="${y}" width="${bw-6}" height="${Math.max(bh,1)}" rx="6" fill="${b.color}" data-tip="${b.tip||(esc(b.name||g.label)+': <b>'+fmt(b.v)+unit+'</b>')}"/>`;
+      const vy=b.v>=0?y-6:y+bh+13;
+      s+=`<text class="val t1" x="${x+bw/2}" y="${vy}" text-anchor="middle">${b.vlabel??(fmt(b.v)+unit)}</text>`;
+      if(b.note) s+=`<text class="sm" x="${x+bw/2}" y="${vy-14}" text-anchor="middle" fill="${b.noteCol||RED}">${b.note}</text>`;
+    });
+    (g.label||'').split('\n').forEach((ln,k)=>{
+      s+=`<text class="lbl t3" x="${padL+i*gw+gw/2}" y="${h-padB+30+k*13}" text-anchor="middle">${esc(ln)}</text>`;});
+  });
+  return svg(W,h,s);
+}
+
+/* horizontal bars: rows=[{label,v,color,vlabel}] */
+function barsH(rows,{unit='',fmt=v=>v,rowH=30,labelW=190,maxOverride=null}={}){
+  const W=520,padR=70,padT=6, h=padT*2+rows.length*rowH;
+  const mx=maxOverride??Math.max(...rows.map(r=>r.v),0);
+  const plotW=W-labelW-padR; let s='';
+  rows.forEach((r,i)=>{
+    const y=padT+i*rowH, bw=r.v/mx*plotW, cy=y+rowH/2;
+    s+=`<text class="lbl t2" x="${labelW-10}" y="${cy+4}" text-anchor="end">${esc(r.label)}</text>`;
+    s+=`<rect x="${labelW}" y="${y+5}" width="${Math.max(bw,1)}" height="${rowH-11}" rx="4" fill="${r.color||PURPLE}" data-tip="${esc(r.label)}: <b>${r.vlabel??fmt(r.v)+unit}</b>"/>`;
+    s+=`<text class="val t1" x="${labelW+bw+8}" y="${cy+4}">${r.vlabel??(fmt(r.v)+unit)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+/* funnel: left-aligned bars, labels to the side (no overflow) */
+function funnel(steps){
+  const W=520,rowH=44,padT=8,h=padT*2+steps.length*rowH, labelW=158, padR=86;
+  const mx=steps[0].v, plotW=W-labelW-padR; let s='';
+  steps.forEach((st,i)=>{
+    const y=padT+i*rowH, bw=st.v/mx*plotW, cy=y+rowH/2, pct=st.v/mx*100;
+    const a=(0.9-0.5*(i/(steps.length-1))).toFixed(2);
+    s+=`<text class="lbl t2" x="${labelW-12}" y="${cy+4}" text-anchor="end">${esc(st.label)}</text>`;
+    s+=`<rect x="${labelW}" y="${y+7}" width="${Math.max(bw,3)}" height="${rowH-14}" rx="6" fill="rgba(124,58,237,${a})" data-tip="${esc(st.label)}: <b>${st.v.toLocaleString()}</b> (${pct.toFixed(pct<10?1:0)}%)"/>`;
+    s+=`<text class="val t1" x="${labelW+bw+9}" y="${cy}">${fmtN(st.v)}</text>`;
+    s+=`<text class="sm t3" x="${labelW+bw+9}" y="${cy+13}">${pct.toFixed(pct<10?1:0)}%</text>`;
+  });
+  return svg(W,h,s);
+}
+
+/* stacked part-to-whole (horizontal single bar): segs=[{label,v,color}] */
+function stackedH(segs,{unit='',fmt=v=>v.toLocaleString()}={}){
+  const W=520,barY=8,barH=44, total=segs.reduce((a,b)=>a+b.v,0), plotW=W-4; let x=2,s='';
+  segs.forEach((sg)=>{
+    const w=sg.v/total*plotW, pct=sg.v/total*100;
+    s+=`<rect x="${x+1}" y="${barY}" width="${Math.max(w-2,1)}" height="${barH}" rx="4" fill="${sg.color}" data-tip="${esc(sg.label)}: <b>${fmt(sg.v)}${unit}</b> (${pct.toFixed(0)}%)"/>`;
+    if(w>44) s+=`<text class="val" x="${x+w/2}" y="${barY+barH/2+1}" text-anchor="middle" fill="${sg.dark?'#12101a':'#fff'}">${pct.toFixed(0)}%</text>`;
+    x+=w;
+  });
+  let ly=barY+barH+22, lx=2;
+  segs.forEach(sg=>{ const t=esc(sg.label)+'  '+fmt(sg.v); s+=`<rect x="${lx}" y="${ly-9}" width="10" height="10" rx="2" fill="${sg.color}"/><text class="sm t2" x="${lx+15}" y="${ly}">${t}</text>`; lx+=15+(t.length*5.9)+22; if(lx>W-130){lx=2;ly+=18;} });
+  return svg(W,ly+8,s);
+}
+
+/* slope with label dodging (avoids overlap when series cluster) */
+function slope(items,{leftLab,rightLab,unit='%'}){
+  const W=520,padT=34,padB=16,h=340,plotH=h-padT-padB, xL=152,xR=W-152;
+  const mx=Math.max(...items.flatMap(i=>[i.from,i.to]))*1.03;
+  const Y=v=>padT+plotH*(1-v/mx); let s='';
+  s+=`<text class="sm t3" x="${xL}" y="18" text-anchor="middle">${leftLab}</text><text class="sm t3" x="${xR}" y="18" text-anchor="middle">${rightLab}</text>`;
+  s+=`<line class="axis" x1="${xL}" x2="${xL}" y1="${padT-4}" y2="${h-padB}"/><line class="axis" x1="${xR}" x2="${xR}" y1="${padT-4}" y2="${h-padB}"/>`;
+  items.forEach(it=>{
+    const y1=Y(it.from),y2=Y(it.to),col=it.color||PURPLE;
+    s+=`<line x1="${xL}" y1="${y1}" x2="${xR}" y2="${y2}" stroke="${col}" stroke-width="2" data-tip="${esc(it.label)}: <b>${it.from}${unit} → ${it.to}${unit}</b>"/>`;
+    s+=`<circle cx="${xL}" cy="${y1}" r="4" fill="${col}"/><circle cx="${xR}" cy="${y2}" r="4" fill="${col}"/>`;
+  });
+  const gap=15, dodge=arr=>{ arr.sort((a,b)=>a.ty-b.ty);
+    for(let i=1;i<arr.length;i++) if(arr[i].ty-arr[i-1].ty<gap) arr[i].ty=arr[i-1].ty+gap;
+    const over=arr.length?arr[arr.length-1].ty-(h-padB):0; if(over>0) arr.forEach(o=>o.ty-=over);
+    const under=arr.length?padT-arr[0].ty:0; if(under>0) arr.forEach(o=>o.ty+=under); return arr; };
+  dodge(items.map(it=>({y:Y(it.from),ty:Y(it.from),t:`${it.label} ${it.from}${unit}`,c:it.color||PURPLE}))).forEach(o=>{
+    if(Math.abs(o.ty-o.y)>1.5) s+=`<line x1="${xL-7}" y1="${o.y}" x2="${xL-11}" y2="${o.ty}" stroke="${o.c}" stroke-width="1" opacity=".45"/>`;
+    s+=`<text class="sm t2" x="${xL-13}" y="${o.ty+3}" text-anchor="end">${esc(o.t)}</text>`; });
+  dodge(items.map(it=>({y:Y(it.to),ty:Y(it.to),t:`${it.to}${unit}`,c:it.color||PURPLE}))).forEach(o=>{
+    if(Math.abs(o.ty-o.y)>1.5) s+=`<line x1="${xR+7}" y1="${o.y}" x2="${xR+11}" y2="${o.ty}" stroke="${o.c}" stroke-width="1" opacity=".45"/>`;
+    s+=`<text class="sm t1" x="${xR+13}" y="${o.ty+3}">${esc(o.t)}</text>`; });
+  return svg(W,h,s);
+}
+
+/* multi-year trend: series=[{label,vals:[...],color}]; partial = indices of partial-year columns (hollow dots + dashed segments) */
+function trend(series,{cols,partial=[],unit='%'}){
+  const W=520,padT=34,padB=26,h=340,plotH=h-padT-padB, xL=150,xR=W-56;
+  const n=cols.length, X=i=>xL+(xR-xL)*i/(n-1);
+  const mx=Math.max(...series.flatMap(sr=>sr.vals))*1.05;
+  const Y=v=>padT+plotH*(1-v/mx); let s='';
+  cols.forEach((c,i)=>{
+    s+=`<line class="axis" x1="${X(i)}" x2="${X(i)}" y1="${padT-4}" y2="${h-padB}"/>`;
+    s+=`<text class="sm t3" x="${X(i)}" y="18" text-anchor="middle">${esc(c)}</text>`;
+  });
+  series.forEach((sr,si)=>{
+    const col=sr.color||PURPLE;
+    for(let i=0;i<n-1;i++){
+      const dash=(partial.includes(i)||partial.includes(i+1))?' stroke-dasharray="5 4" opacity=".7"':'';
+      s+=`<line x1="${X(i)}" y1="${Y(sr.vals[i])}" x2="${X(i+1)}" y2="${Y(sr.vals[i+1])}" stroke="${col}" stroke-width="2"${dash} data-tip="${esc(sr.label)}: <b>${sr.vals[i]}${unit} → ${sr.vals[i+1]}${unit}</b> (${esc(cols[i])} → ${esc(cols[i+1])})"/>`;
+    }
+    sr.vals.forEach((v,i)=>{
+      const hollow=partial.includes(i);
+      s+=`<circle cx="${X(i)}" cy="${Y(v)}" r="4" fill="${hollow?'#fff':col}" stroke="${col}" stroke-width="${hollow?2:0}" data-tip="${esc(sr.label)} ${esc(cols[i])}: <b>${v}${unit}</b>${hollow?' (partial year)':''}"/>`;
+    });
+    if(si===0){ for(let i=1;i<n-1;i++) s+=`<text class="val t1" x="${X(i)}" y="${Y(sr.vals[i])-9}" text-anchor="middle">${sr.vals[i]}${unit}</text>`; }
+  });
+  const gap=15, dodge=arr=>{ arr.sort((a,b)=>a.ty-b.ty);
+    for(let i=1;i<arr.length;i++) if(arr[i].ty-arr[i-1].ty<gap) arr[i].ty=arr[i-1].ty+gap;
+    const over=arr.length?arr[arr.length-1].ty-(h-padB):0; if(over>0) arr.forEach(o=>o.ty-=over);
+    const under=arr.length?padT-arr[0].ty:0; if(under>0) arr.forEach(o=>o.ty+=under); return arr; };
+  const ast=i=>partial.includes(i)?'*':'';
+  dodge(series.map(sr=>({y:Y(sr.vals[0]),ty:Y(sr.vals[0]),t:`${sr.label} ${sr.vals[0]}${unit}${ast(0)}`,c:sr.color||PURPLE}))).forEach(o=>{
+    if(Math.abs(o.ty-o.y)>1.5) s+=`<line x1="${xL-7}" y1="${o.y}" x2="${xL-11}" y2="${o.ty}" stroke="${o.c}" stroke-width="1" opacity=".45"/>`;
+    s+=`<text class="sm t2" x="${xL-13}" y="${o.ty+3}" text-anchor="end">${esc(o.t)}</text>`; });
+  dodge(series.map(sr=>({y:Y(sr.vals[n-1]),ty:Y(sr.vals[n-1]),t:`${sr.vals[n-1]}${unit}${ast(n-1)}`,c:sr.color||PURPLE}))).forEach(o=>{
+    if(Math.abs(o.ty-o.y)>1.5) s+=`<line x1="${xR+7}" y1="${o.y}" x2="${xR+11}" y2="${o.ty}" stroke="${o.c}" stroke-width="1" opacity=".45"/>`;
+    s+=`<text class="sm t1" x="${xR+13}" y="${o.ty+3}">${esc(o.t)}</text>`; });
+  return svg(W,h,s);
+}
+
+/* dumbbell: rows=[{label,a,b,color}] — era (hollow) vs now (solid) */
+function dumbbell(rows,{fmt=v=>'$'+v,labelW=200,legend=true,was='was'}={}){
+  const W=520,rowH=31,padT=26,padR=132,h=padT+rows.length*rowH+8;
+  const mx=Math.max(...rows.flatMap(r=>[r.a,r.b]))*1.06, plotW=W-labelW-padR;
+  const X=v=>labelW+v/mx*plotW; let s='';
+  const dir=r=>r.b-r.a>5?GREEN:(r.b-r.a<-5?RED:'var(--neutral)');
+  if(legend){s+=`<circle cx="14" cy="14" r="4.5" fill="var(--v4-bg)" stroke="var(--neutral)" stroke-width="2"/><text class="sm t3" x="23" y="18">2022 to early-2025</text>`;
+  s+=`<circle cx="152" cy="14" r="4.5" fill="${GREEN}"/><text class="sm t3" x="161" y="18">rose</text>`;
+  s+=`<circle cx="208" cy="14" r="4.5" fill="${RED}"/><text class="sm t3" x="217" y="18">fell</text>`;
+  s+=`<circle cx="258" cy="14" r="4.5" fill="var(--neutral)"/><text class="sm t3" x="267" y="18">≈flat (study year)</text>`;}
+  rows.forEach((r,i)=>{
+    const y=padT+i*rowH+rowH/2, col=dir(r), xa=X(r.a), xb=X(r.b);
+    s+=`<text class="lbl t2" x="${labelW-10}" y="${y+4}" text-anchor="end">${esc(r.label)}</text>`;
+    s+=`<line x1="${xa}" y1="${y}" x2="${xb}" y2="${y}" stroke="${col}" stroke-width="2" opacity=".45"/>`;
+    s+=`<circle cx="${xa}" cy="${y}" r="5" fill="var(--v4-bg)" stroke="var(--neutral)" stroke-width="2" data-tip="${esc(r.label)} ${was}: <b>${fmt(r.a)}</b>"/>`;
+    s+=`<circle cx="${xb}" cy="${y}" r="5.5" fill="${col}" data-tip="${esc(r.label)} study year: <b>${fmt(r.b)}</b>/1k"/>`;
+    s+=`<text class="val t1" x="${W-padR+10}" y="${y+4}">${fmt(r.b)}</text><text class="sm t3" x="${W-padR+52}" y="${y+4}">${was} ${fmt(r.a)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+/* tiers: rows=[{label,segs:[{v,color,name}]}] — labeled 100% stacked bars */
+function tiers(rows){
+  const W=520,labelW=170,barH=30,rowGap=20,padT=6;
+  let y=padT,s='';
+  rows.forEach(r=>{
+    const total=r.segs.reduce((a,b)=>a+b.v,0), plotW=W-labelW-8; let x=labelW;
+    s+=`<text class="lbl t2" x="${labelW-10}" y="${y+barH/2+4}" text-anchor="end">${esc(r.label)}</text>`;
+    r.segs.forEach(sg=>{
+      const w=sg.v/total*plotW, pct=sg.v/total*100;
+      if(pct<0.5){
+        s+=`<line x1="${x+1}" y1="${y-4}" x2="${x+1}" y2="${y+barH+4}" stroke="${sg.color}" stroke-width="3" data-tip="${esc(sg.name)}: <b>0%</b>"/>`;
+        s+=`<text class="val t1" x="${x+7}" y="${y-7}">0% ${esc(sg.name.toLowerCase())}</text>`;
+      } else {
+        s+=`<rect x="${x+1}" y="${y}" width="${Math.max(w-2,1)}" height="${barH}" rx="4" fill="${sg.color}" data-tip="${esc(sg.name)}: <b>${pct.toFixed(pct<10?1:0)}%</b> (${fmtN(sg.v)})"/>`;
+        if(w>34) s+=`<text class="val" x="${x+w/2}" y="${y+barH/2+1}" text-anchor="middle" fill="${sg.dark?'#12101a':'#fff'}">${pct.toFixed(0)}%</text>`;
+      }
+      x+=w;
+    });
+    y+=barH+rowGap;
+  });
+  let lx=labelW,ly=y+8;
+  [['Never click or act','var(--neutral)'],['1–2 clicks/actions',PALT],['3+ (engaged)',PURPLE]].forEach(([t,c])=>{
+    s+=`<rect x="${lx}" y="${ly-9}" width="10" height="10" rx="2" fill="${c}"/><text class="sm t2" x="${lx+15}" y="${ly}">${t}</text>`; lx+=15+t.length*6+22;});
+  return svg(W,ly+8,s);
+}
+
+
+/* matrix heatmap */
+function matrix(rows,cols,cells,{rowTot,colTot}){
+  const W=560,cellW=74,cellH=40,labelW=W-cols.length*cellW-40,padT=30;
+  const mx=Math.max(...cells.flat()); let s='';
+  cols.forEach((c,j)=>{ s+=`<text class="sm t3" x="${labelW+j*cellW+cellW/2}" y="${padT-10}" text-anchor="middle">${esc(c)}</text>`; });
+  s+=`<text class="sm t3" x="${labelW+cols.length*cellW+8}" y="${padT-10}">Total</text>`;
+  rows.forEach((r,i)=>{
+    const y=padT+i*cellH;
+    s+=`<text class="lbl t2" x="${labelW-10}" y="${y+cellH/2+4}" text-anchor="end">${esc(r)}</text>`;
+    cols.forEach((c,j)=>{
+      const v=cells[i][j], x=labelW+j*cellW, a=v===0?0:.12+.78*(v/mx);
+      s+=`<rect x="${x+2}" y="${y+2}" width="${cellW-4}" height="${cellH-4}" rx="6" fill="rgba(124,58,237,${a.toFixed(3)})" stroke="var(--v4-border)" data-tip="${esc(r)} · ${esc(c)}: <b>${v}</b>"/>`;
+      if(v>0) s+=`<text class="val" x="${x+cellW/2}" y="${y+cellH/2+4}" text-anchor="middle" fill="${a>.5?'#fff':'var(--v4-text-2)'}">${v}</text>`;
+    });
+    s+=`<text class="val t3" x="${labelW+cols.length*cellW+8}" y="${y+cellH/2+4}">${rowTot[i]}</text>`;
+  });
+  const yb=padT+rows.length*cellH;
+  s+=`<text class="sm t3" x="${labelW-10}" y="${yb+16}" text-anchor="end">Total</text>`;
+  cols.forEach((c,j)=>{ s+=`<text class="val t3" x="${labelW+j*cellW+cellW/2}" y="${yb+16}" text-anchor="middle">${colTot[j]}</text>`; });
+  return svg(W,yb+26,s);
+}
+
+/* audience mosaic: 1,000 dots = the emailed file, view toggles */
+const MOSAIC_VIEWS={
+  tiers:{label:'The groups',legend:[['≈1,320 supporters per dot',PALT]],
+    color:i=>PALT,
+    read:'Four in five emailed supporters never clicked or acted once all year. The engaged group, which produces half of all email giving, is twenty-nine dots out of a thousand. Switch views to see what else is true of these same people.'},
+  gave:{label:'Ever gave (any channel)',legend:[['Ever gave (20.3% of the emailed file)',GREEN],['Never gave','var(--neutral)']],
+    color:i=>{const t0=i<118, t1=i>=790&&i<852, t2=i>=971&&i<994; return (t0||t1||t2)?GREEN:'var(--neutral)';},
+    read:'268,000 supporters have given at some point, and every engagement group holds donors: 15% of never-clickers have given through the web or the mail, 34% of the infrequent group, and 79% of the engaged. Donors sit everywhere on this chart. Donors an email can see do not.'},
+  email:{label:'Gave through a send this year',legend:[['Gave through a send this study year (64,846 people)',PURPLE],['Everyone else','var(--neutral)']],
+    color:i=>(i<8)||(i>=790&&i<816)||(i>=971&&i<986)?PURPLE:'var(--neutral)',
+    read:'64,846 supporters, 4.9% of the emailed file, gave through a send this year. Most sit in the lightly engaged band, where the gift was the only click all year. The engaged band holds 15 dots and gives repeatedly, which is where the sustainer conversions come from.'},
+  policy:{label:'Received policy-framed email',legend:[['Received policy-framed email this year',RED],['Did not','var(--neutral)']],
+    color:i=>{const t0=i<490, t1=i>=790&&i<902, t2=i>=971&&i<997; return (t0||t1||t2)?RED:'var(--neutral)';},
+    read:'Policy-framed email leads with the funding fight or the vote rather than the work in the field, classified from the content of the send. It reaches 63% of every group at close to the same rate, so supporters who have never clicked on policy receive it as often as the supporters it works on.'},
+  pref:{label:'Known-interest pool',legend:[['A readable topic interest (765,000 supporters)',BLUE],['Interest unknown','var(--neutral)']],
+    color:i=>i<400||(i>=790&&i<945)||(i>=971&&i<996)?BLUE:'var(--neutral)',
+    read:'765,000 supporters have a readable topic interest, proven by a gift or a click. The placement is measured: 86% of the engaged band, 86% of the infrequent band, and 38% of never-clickers who clicked in an earlier year. Only 31% of the appeals this pool receives today align with the topic they care about.'},
+  surge:{label:'Emergency-only givers',legend:[['Every gift came inside an emergency appeal (113,000)',ORANGE],['Everyone else','var(--neutral)']],
+    color:i=>i<62||(i>=790&&i<810)||(i>=971&&i<975)?ORANGE:'var(--neutral)',
+    read:'113,000 supporters have given only inside an emergency appeal window. Every recorded gift falls in one, sustainers excluded. They are 42% of everyone who has ever given, they give above the file average when they give, and they are the group the second-gift work is aimed at.'}};
+function mosaic(view){
+  const cols=50, cell=19, W=cols*cell+8, v=MOSAIC_VIEWS[view];
+  const groups=[
+    {label:'Never clicked or acted this year: 1.04M people (79.0%)',n:790},
+    {label:'Infrequent subscribers, clicked or acted once or twice: 238K (18.1%)',n:181},
+    {label:'Engaged subscribers, three or more clicks or actions: 39K (3.0%)',n:29}];
+  let s='', y=8, i=0;
+  groups.forEach(g=>{
+    s+=`<text class="sm t3" x="8" y="${y+8}">${esc(g.label)}</text>`; y+=16;
+    for(let k=0;k<g.n;k++,i++){
+      const cx=8+(k%cols)*cell+cell/2, cy=y+Math.floor(k/cols)*cell+cell/2;
+      s+=`<circle cx="${cx}" cy="${cy}" r="6.5" fill="${v.color(i)}" data-tip="≈1,320 supporters"/>`;
+    }
+    y+=Math.ceil(g.n/cols)*cell+14;
+  });
+  return svg(W,y,s);
+}
+function mosaicMount(el){
+  const bar=document.createElement('div'); bar.className='legend'; bar.style.gap='8px';
+  const plot=el.querySelector('.plot'), readEl=el.querySelector('.read');
+  Object.entries(MOSAIC_VIEWS).forEach(([k,v],idx)=>{
+    const b=document.createElement('button'); b.textContent=v.label; b.className='toggle'; b.style.fontSize='12px';
+    b.onclick=()=>{ plot.innerHTML=mosaic(k); readEl.innerHTML=v.read+' <span style="opacity:.55">('+v.legend.map(l=>l[0]).join(' · ')+')</span>'; bindTips(plot);
+      bar.querySelectorAll('button').forEach(x=>x.style.borderColor=''); b.style.borderColor='var(--accent)'; };
+    if(idx===0){b.style.borderColor='var(--accent)';}
+    bar.appendChild(b);
+  });
+  el.insertBefore(bar, plot);
+}
+
+/* flow map: the program end to end — funnel ribbons + year flows + money strip */
+function flowmap(){
+  const F=M.funnel, W=1080,H=430, k=250/F.ever_on_list;
+  const C=[{x:30,w:16},{x:300,w:16},{x:570,w:16},{x:850,w:16}];
+  function bar(c,y,people,color,label,sub,op){
+    const h=Math.max(people*k,5);
+    return {rect:`<rect x="${c.x}" y="${y}" width="${c.w}" height="${h}" rx="4" fill="${color}" opacity="${op||1}" data-tip="${label}: <b>${fmtN(people)}</b>"/>`+
+      `<text class="val t1" x="${c.x+c.w+8}" y="${y+Math.min(h/2+4,14)}">${label}</text><text class="sm t3" x="${c.x+c.w+8}" y="${y+Math.min(h/2+4,14)+14}">${sub}</text>`, y, h, x:c.x, w:c.w};
+  }
+  function rib(a,b,color,op){
+    const x1=a.x+a.w, x2=b.x, mx=(x1+x2)/2;
+    return `<path d="M${x1},${a.y} C${mx},${a.y} ${mx},${b.y} ${x2},${b.y} L${x2},${b.y+b.h} C${mx},${b.y+b.h} ${mx},${a.y+a.h} ${x1},${a.y+a.h} Z" fill="${color}" opacity="${op}"/>`;
+  }
+  const B=M.bands; let s='';
+  const ever=bar(C[0],40,F.ever_on_list,'var(--neutral)','Ever on the list','3.18M since 2019',.55);
+  const sub=bar(C[1],40,F.subscribed,PALT,'Subscribed today','2.14M (67%)');
+  const gone=bar(C[1],40+F.subscribed*k+26,F.ever_on_list-F.subscribed,'var(--neutral)','Lapsed or unsubscribed','1.04M',.28);
+  const mailed=bar(C[2],40,F.emailed,PURPLE,'Emailed this year','1.32M · 38.4M sends');
+  const unmailed=bar(C[2],40+F.emailed*k+26,F.subscribed-F.emailed,'var(--neutral)','Subscribed, not emailed','822K',.28);
+  const t0=bar(C[3],40,B[0].n,'var(--neutral)','Never click or act','79.0% of the file, 15% of email giving',.6);
+  const t1=bar(C[3],40+B[0].n*k+16,B[1].n,PALT,'1-2 clicks or actions','18.1%');
+  const t2=bar(C[3],40+B[0].n*k+B[1].n*k+52,B[2].n,PDARK,'3+ clicks or actions','3.0% (half of email giving');
+  s+=rib(ever,sub,PALT,.16)+rib(ever,gone,'var(--neutral)',.10)+rib(sub,mailed,PURPLE,.16)+rib(sub,unmailed,'var(--neutral)',.10);
+  s+=rib(mailed,t0,'var(--neutral)',.14)+rib(mailed,t1,PALT,.2)+rib(mailed,t2,PDARK,.25);
+  [ever,sub,gone,mailed,unmailed,t0,t1,t2].forEach(b=>s+=b.rect);
+  s+=`<text class="sm t3" x="${C[3].x+C[3].w+8}" y="${t2.y+Math.min(t2.h/2+4,14)+28}">comes from this group)</text>`;
+  const fy=344;
+  s+=`<line class="axis" x1="30" x2="${W-30}" y1="${fy-22}" y2="${fy-22}"/>`;
+  s+=`<text class="sm t3" x="30" y="${fy-30}">THE YEAR'S FLOWS (people)</text><text class="sm t3" x="${W/2+60}" y="${fy-30}">FUNDRAISING (Sep 2025 – Aug 2026)</text>`;
+  s+=`<text class="val t1" x="30" y="${fy}">+${fmtN(F.joined_yr)} join</text><text class="sm t3" x="30" y="${fy+15}">new supporters</text>`;
+  s+=`<text class="val" x="150" y="${fy}" fill="${RED}">−${fmtN(C_.leaving.unsub)} unsubscribe</text><text class="sm t3" x="150" y="${fy+15}">0.93% of supporter-months</text>`;
+  s+=`<text class="val" x="330" y="${fy}" fill="${ORANGE}">−${fmtN(C_.leaving.inactive)} go inactive for 13+ weeks</text><text class="sm t3" x="330" y="${fy+15}">2.10% of supporter-months</text>`;
+  s+=`<text class="val t1" x="${W/2+60}" y="${fy}">38.4M sends → ${fmt$(B_.annual_email_rev)} email-influenced revenue</text><text class="sm t3" x="${W/2+60}" y="${fy+15}">≈$${C_.per1k.raised} per 1,000 sends in one-time giving</text>`;
+  s+=`<text class="val" x="${W/2+60}" y="${fy+38}" fill="${GREEN}">31,400 active sustainer plans at $28 a month,</text>`;
+  s+=`<text class="val" x="${W/2+60}" y="${fy+55}" fill="${GREEN}">${fmt$(S_.annual_rev)} a year of the total</text>`;
+  return svg(W,H,s);
+}
+
+/* effect map: x=audience (log), y=measured effect, color=how sure we are */
+function effectmap(){
+  const W=1080,H=420,padL=64,padB=46,padT=18,padR=20;
+  const pts=[
+    {l:'Sustainer ask in the warm window',aud:48360,lift:132,g:'a',d:'conversion 1.9% → 4.4% inside 90 days of a gift'},
+    {l:'Follow up an emergency gift',aud:18860,lift:71,g:'t',d:'second-gift rate 14% → 24% with a where-your-money-went message'},
+    {l:'Post-gift contact within a week',aud:96000,lift:67,g:'a',d:'second-gift rate 7.1% → 11.8%'},
+    {l:'Route appeals to a known interest',aud:765000,lift:60,g:'a',d:'gifts per 10,000 appeal sends 18.5 → 29.6'},
+    {l:'Ask inside the six-week window',aud:310000,lift:50,g:'a',d:'half the topic lift is gone by week six'},
+    {l:'Sustainer stop-warning list',aud:31400,lift:44,g:'t',d:'the score finds 44% of stops in the top decile'},
+    {l:'Policy framing to prior clickers',aud:112000,lift:31,g:'a',d:'+31% gift rate where a prior policy click exists'},
+    {l:'Name what the money buys',aud:268000,lift:27,g:'a',d:'+27% gift rate among supporters who have given $50 to $250'},
+    {l:'Hold back the costliest sends',aud:396000,lift:19,g:'a',d:'8% of volume carries 19% of unsubscribes'},
+    {l:'A monthly volume ceiling',aud:1318000,lift:19,g:'a',d:'each extra send raises unsubscribe odds 19%'}];
+  const X=a=>padL+(Math.log10(a)-4)*( (W-padL-padR)/2.2 ), Y=v=>padT+(150-v)*(H-padT-padB)/150;
+  const col={a:PURPLE,t:ORANGE};
+  let s='';
+  [0,50,100,150].forEach(v=>{s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${Y(v)}" y2="${Y(v)}"/><text class="sm t3" x="${padL-8}" y="${Y(v)+4}" text-anchor="end">+${v}%</text>`;});
+  [[1e4,'10K'],[1e5,'100K'],[1e6,'1M']].forEach(([a,t])=>{s+=`<text class="sm t3" x="${X(a)}" y="${H-padB+18}" text-anchor="middle">${t} people</text>`;});
+  s+=`<text class="sm t3" x="${padL}" y="${H-padB+36}">audience the finding applies to →</text>`;
+  pts.forEach((pt,pi)=>{
+    const x=X(pt.aud), y=Y(Math.min(pt.lift,150));
+    const fl=(x>W*0.58)||(x<W*0.28?false:pi%2===1);   /* flip left near the right edge */
+    s+=`<circle cx="${x}" cy="${y}" r="8" fill="${col[pt.g]}" opacity=".85" data-tip="<b>${esc(pt.l)}</b><br>${esc(pt.d)}"/>`;
+    s+=`<text class="sm t2" x="${x+(fl?-11:11)}" y="${y+4}" text-anchor="${fl?'end':'start'}">${esc(pt.l)}</text>`;
+  });
+  return svg(W,H,s);
+}
+
+/* supporter timeline: the study's windows on one life-line */
+function lifeline(){
+  const W=1080,H=300,y=150,x0=40,x1=W-40;
+  let s=`<line x1="${x0}" x2="${x1}" y1="${y}" y2="${y}" stroke="var(--neutral)" stroke-width="2"/>`;
+  const ev=[[60,'JOINS'],[340,'GIVES IN AN EMERGENCY'],[620,'GIVES AGAIN'],[900,'STARTS A PLAN']];
+  ev.forEach(([x,t])=>{s+=`<circle cx="${x}" cy="${y}" r="6" fill="${PURPLE}"/><text class="val t1" x="${x}" y="${y-52}" text-anchor="middle">${t}</text>`;});
+  const win=[
+    [60,220,ORANGE,'First 30 days','A supporter who receives more than four sends in the first month unsubscribes at nearly twice the rate of one who receives two'],
+    [340,500,RED,'First 21 days after an emergency gift','A message naming where the money went carries the second-gift rate from 14% to 24%. After three weeks the difference is gone'],
+    [620,780,GREEN,'Six-week interest window','A topic-aligned ask gives at 1.6 times the unaligned rate while the interest is fresh, and half that lift is gone by week six'],
+    [900,1010,RED,'Months two and three of a plan','Young plans stop at 4.5% a month against 2.6% for mature ones, and the warning signs show up two sends before the last payment']];
+  win.forEach(([a,b,c,t,d])=>{
+    s+=`<rect x="${a}" y="${y-14}" width="${b-a}" height="28" rx="6" fill="${c}" opacity=".22" data-tip="<b>${esc(t)}</b><br>${esc(d)}"/>`;
+    s+=`<text class="sm t2" x="${(a+b)/2}" y="${y-24}" text-anchor="middle">${t}</text>`;
+    const words=d.split(' '); let lines=[''];
+    words.forEach(w=>{ if((lines[lines.length-1]+' '+w).length>34) lines.push(w); else lines[lines.length-1]=(lines[lines.length-1]+' '+w).trim(); });
+    lines.forEach((ln,k)=>{ s+=`<text class="sm t3" x="${(a+b)/2}" y="${y+34+k*13}" text-anchor="middle">${esc(ln)}</text>`; });
+  });
+  return svg(W,H,s);
+}
+
+/* value staircase: width=people, height=email $/person/yr */
+function staircase(){
+  const W=1080,H=340,y0=H-60,total=B_.mailed;
+  const B=M.bands, maxV=Math.max(...B.map(b=>b.per_person))*1.05;
+  const names=['Never click or act','Infrequent: 1-2 clicks','Engaged: 3+ clicks'];
+  const cols=['var(--neutral)',PALT,PURPLE];
+  const plotW=W-80; let x=40,s='';
+  B.forEach((b,i)=>{
+    const w=plotW*b.n/total, h=Math.max(b.per_person/maxV*(y0-60),3);
+    s+=`<rect x="${x}" y="${y0-h}" width="${Math.max(w-4,8)}" height="${h}" rx="4" fill="${cols[i]}" data-tip="<b>${names[i]}</b><br>${fmtN(b.n)} people · <b>$${b.per_person.toFixed(2)}</b> per person per year via email · ${fmt$(b.total)} total"/>`;
+    s+=`<text class="val t1" x="${x+w/2}" y="${y0-h-10}" text-anchor="middle">$${Math.round(b.per_person)}</text>`;
+    s+=`<text class="sm t3" x="${x+w/2}" y="${y0+18}" text-anchor="middle">${names[i]}</text><text class="sm t3" x="${x+w/2}" y="${y0+32}" text-anchor="middle">${fmtN(b.n)} people</text>`;
+    x+=w;
+  });
+  return svg(W,H,s);
+}
+
+/* year heartbeat — monthly revenue, sends per person, unsubscribes */
+function heartbeat(){
+  const HB=C_.hb, W=1080,H=350,padL=56,padR=30,y0=H-56,topY=48;
+  const n=HB.m.length, X=i=>padL+i*(W-padL-padR)/(n-1);
+  const mxR=Math.max(...HB.rev)*1.08, mxS=Math.max(...HB.spp)*1.9, mxU=Math.max(...HB.unsub)*2.1;
+  const Yr=v=>y0-(v/mxR)*(y0-topY)*.82, Ys=v=>y0-(v/mxS)*(y0-topY), Yu=v=>y0-(v/mxU)*(y0-topY)*.5;
+  let s='', LY=22;
+  s+=`<rect x="${padL}" y="${LY-9}" width="13" height="18" rx="3" fill="${PURPLE}" opacity=".22"/>`;
+  s+=`<text class="lbl t2" x="${padL+20}" y="${LY+4}">Email-influenced revenue</text>`;
+  s+=`<line x1="${padL+196}" y1="${LY}" x2="${padL+224}" y2="${LY}" stroke="${PURPLE}" stroke-width="2.5"/><circle cx="${padL+210}" cy="${LY}" r="4" fill="${PURPLE}"/>`;
+  s+=`<text class="lbl t2" x="${padL+232}" y="${LY+4}">Sends per supporter</text>`;
+  s+=`<line x1="${padL+392}" y1="${LY}" x2="${padL+420}" y2="${LY}" stroke="${RED}" stroke-width="1.5"/><circle cx="${padL+406}" cy="${LY}" r="3" fill="${RED}"/>`;
+  s+=`<text class="lbl t2" x="${padL+428}" y="${LY+4}">Unsubscribes</text>`;
+  HB.m.forEach((m,i)=>{s+=`<text class="sm t3" x="${X(i)}" y="${H-34}" text-anchor="middle">${m}</text>`;});
+  s+=`<text class="sm t3" x="${X(0)}" y="${H-18}" text-anchor="middle">2025</text><text class="sm t3" x="${X(n-1)}" y="${H-18}" text-anchor="middle">2026</text>`;
+  s+=`<line class="axis" x1="${padL-8}" x2="${W-padR+8}" y1="${y0}" y2="${y0}"/>`;
+  HB.rev.forEach((v,i)=>{
+    const x=X(i)-19, y=Yr(v);
+    s+=`<rect x="${x}" y="${y}" width="38" height="${Math.max(y0-y,1.5)}" rx="4" fill="${PURPLE}" opacity="${HB.ev[i]?.42:.22}" data-tip="${HB.m[i]}: <b>${fmt$(v*1000)}</b>${HB.ev[i]?' · '+esc(HB.ev[i]):''} · ${HB.spp[i]} sends/supporter · ${HB.unsub[i]}K unsubscribes"/>`;
+    if(HB.ev[i]) s+=`<text class="sm" x="${X(i)}" y="${y-8}" text-anchor="middle" fill="${PURPLE}" stroke="var(--v4-surface)" stroke-width="4" paint-order="stroke">${esc(HB.ev[i])}</text>`;
+  });
+  let path=''; HB.spp.forEach((v,i)=>{path+=(i?'L':'M')+X(i).toFixed(1)+' '+Ys(v).toFixed(1)+' ';});
+  s+=`<path d="${path}" fill="none" stroke="${PURPLE}" stroke-width="2.5"/>`;
+  HB.spp.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Ys(v)}" r="5" fill="${PURPLE}" stroke="${PURPLE}" stroke-width="2" data-tip="${HB.m[i]}: <b>${v}</b> sends per supporter"/>`;});
+  let up=''; HB.unsub.forEach((v,i)=>{up+=(i?'L':'M')+X(i).toFixed(1)+' '+Yu(v).toFixed(1)+' ';});
+  s+=`<path d="${up}" fill="none" stroke="${RED}" stroke-width="1.5" opacity=".85"/>`;
+  HB.unsub.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Yu(v)}" r="3" fill="${RED}" stroke="${RED}" stroke-width="1.5" data-tip="${HB.m[i]}: <b>${v}K</b> unsubscribes"/>`;});
+  return svg(W,H,s);
+}
+
+
+/* full-width multi-series line, 1080 canvas — for span2 cards */
+function linesWide(series,{cols,fmt=v=>v,h=330}={}){
+  const W=1080,padL=64,padR=96,padT=30,y0=h-58,topY=padT+14;
+  const n=cols.length, X=i=>padL+i*(W-padL-padR)/(n-1);
+  const mx=Math.max(...series.flatMap(sr=>sr.vals),baseline||0)*1.14;
+  const Y=v=>y0-(v/mx)*(y0-topY); let s='';
+  for(let g=0;g<=4;g++){const y=topY+(y0-topY)*g/4;
+    s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+    s+=`<text class="sm t3" x="${padL-9}" y="${y+3.5}" text-anchor="end">${fmt(Math.round(mx*(1-g/4)))}</text>`;}
+  cols.forEach((c,i)=>{s+=`<text class="sm t3" x="${X(i)}" y="${y0+20}" text-anchor="middle">${esc(c)}</text>`;});
+  const Yv=Y2;
+  if(baseline!=null){
+    /* shade the gap between the curve and the baseline: the gap is the lift */
+    const sr0=series[0];
+    let area='M'+X(0)+' '+Yv(sr0.vals[0]);
+    sr0.vals.forEach((v,i)=>{area+=' L'+X(i).toFixed(1)+' '+Yv(v).toFixed(1);});
+    area+=' L'+X(n-1).toFixed(1)+' '+Yv(baseline).toFixed(1)+' L'+X(0).toFixed(1)+' '+Yv(baseline).toFixed(1)+' Z';
+    s+=`<path d="${area}" fill="${sr0.color}" opacity=".13"/>`;
+    s+=`<line x1="${padL}" x2="${W-padR}" y1="${Yv(baseline)}" y2="${Yv(baseline)}" stroke="var(--neutral)" stroke-width="1.8" stroke-dasharray="6 5"/>`;
+    if(baseLab) s+=`<text class="sm t3" x="${padL+4}" y="${Yv(baseline)+15}">${esc(baseLab)}</text>`;
+    s+=`<text class="val t3" x="${W-padR+7}" y="${Yv(baseline)+4}">${baseline}</text>`;
+  }
+  series.forEach(sr=>{
+    let d=''; sr.vals.forEach((v,i)=>{d+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)+' ';});
+    s+=`<path d="${d}" fill="none" stroke="${sr.color}" stroke-width="2.5" stroke-linejoin="round"/>`;
+    sr.vals.forEach((v,i)=>{
+      s+=`<circle cx="${X(i)}" cy="${Y(v)}" r="4.5" fill="${sr.color}" data-tip="<b>${esc(sr.label)}</b><div class=k>${esc(cols[i])}</div>${fmt(v)}"/>`;});
+    s+=`<text class="val" x="${X(n-1)+9}" y="${Y(sr.vals[n-1])+4}" fill="${sr.color}">${esc(sr.label)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+
+/* net flow: three bands — the running plan count, the starts and stops behind it,
+   and the month's net change as diverging bars */
+function netFlow(rows,{startTotal,fmt=v=>v.toLocaleString()}={}){
+  const W=1080,h=470,padL=76,padR=104,topY=30,botY=h-58;
+  const n=rows.length, X=i=>padL+i*(W-padL-padR)/(n-1);
+  const zone=(botY-topY);
+  const A=[topY, topY+zone*0.26];            // active plans
+  const Bz=[topY+zone*0.36, topY+zone*0.66]; // started / stopped
+  const Cz=[topY+zone*0.74, botY];           // net bars
+  const nets=rows.map(r=>r.started-r.stopped);
+  let run=startTotal; const totals=rows.map(r=>(run+=r.started-r.stopped));
+  let s='';
+  const band=(y0,y1,lab)=>{ s+=`<text class="sm t3" x="${padL}" y="${y0-9}">${lab}</text>`; };
+
+  /* A: running total */
+  band(A[0],A[1],'ACTIVE PLANS (running total)');
+  const loT=Math.min(...totals,startTotal), hiT=Math.max(...totals,startTotal), padT2=(hiT-loT)*0.35+1;
+  const Yt=v=>A[1]-(v-loT+padT2*0.5)/((hiT-loT)+padT2)*(A[1]-A[0]);
+  let d=''; totals.forEach((v,i)=>{d+=(i?'L':'M')+X(i).toFixed(1)+' '+Yt(v).toFixed(1)+' ';});
+  s+=`<path d="${d}" fill="none" stroke="${PURPLE}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  totals.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Yt(v)}" r="4" fill="${PURPLE}" data-tip="<b>${esc(rows[i].m)}</b><div class=k>active plans</div>${fmt(v)}"/>`;});
+  s+=`<text class="val" x="${X(n-1)+10}" y="${Yt(totals[n-1])+4}" fill="${PURPLE}">${fmt(totals[n-1])} plans</text>`;
+
+  /* B: starts and stops */
+  band(Bz[0],Bz[1],'PLANS STARTED AND STOPPED');
+  const mxB=Math.max(...rows.map(r=>Math.max(r.started,r.stopped)))*1.12;
+  const Yb=v=>Bz[1]-(v/mxB)*(Bz[1]-Bz[0]);
+  s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${Bz[1]}" y2="${Bz[1]}"/>`;
+  [['started',GREEN],['stopped',RED]].forEach(([key,col])=>{
+    let p2=''; rows.forEach((r,i)=>{p2+=(i?'L':'M')+X(i).toFixed(1)+' '+Yb(r[key]).toFixed(1)+' ';});
+    s+=`<path d="${p2}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    rows.forEach((r,i)=>{s+=`<circle cx="${X(i)}" cy="${Yb(r[key])}" r="3.4" fill="${col}" data-tip="<b>${esc(r.m)}</b><div class=k>plans ${key}</div>${fmt(r[key])}"/>`;});
+    s+=`<text class="val" x="${X(n-1)+10}" y="${Yb(rows[n-1][key])+4}" fill="${col}">${fmt(rows[n-1][key])} ${key}</text>`;
+  });
+
+  /* C: net bars */
+  band(Cz[0],Cz[1],'NET CHANGE EACH MONTH');
+  const mxN=Math.max(...nets.map(Math.abs))*1.3, mid=(Cz[0]+Cz[1])/2;
+  const Yn=v=>mid-(v/mxN)*((Cz[1]-Cz[0])/2);
+  s+=`<line class="axis" x1="${padL-10}" x2="${W-padR+6}" y1="${mid}" y2="${mid}"/>`;
+  const bw=Math.min(40,(W-padL-padR)/n*0.56);
+  rows.forEach((r,i)=>{
+    const v=r.started-r.stopped, y=v>=0?Yn(v):mid, hh=Math.abs(Yn(v)-mid);
+    s+=`<rect x="${X(i)-bw/2}" y="${y}" width="${bw}" height="${Math.max(hh,1.5)}" rx="4" fill="${v>=0?GREEN:RED}" data-tip="<b>${esc(r.m)}</b><div class=k>${fmt(r.started)} started &middot; ${fmt(r.stopped)} stopped</div>net ${v>=0?'+':''}${fmt(v)}"/>`;
+    s+=`<text class="sm" x="${X(i)}" y="${v>=0?y-6:y+hh+13}" text-anchor="middle" fill="${v>=0?GREEN:RED}">${v>=0?'+':''}${v}</text>`;
+    s+=`<text class="sm t3" x="${X(i)}" y="${botY+22}" text-anchor="middle">${esc(r.m)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+/* full-width multi-series line, 1080 canvas — for span2 cards */
+function linesWide(series,{cols,fmt=v=>v,h=330}={}){
+  const W=1080,padL=64,padR=96,padT=30,y0=h-58,topY=padT+14;
+  const n=cols.length, X=i=>padL+i*(W-padL-padR)/(n-1);
+  const mx=Math.max(...series.flatMap(sr=>sr.vals),baseline||0)*1.14;
+  const Y=v=>y0-(v/mx)*(y0-topY); let s='';
+  for(let g=0;g<=4;g++){const y=topY+(y0-topY)*g/4;
+    s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+    s+=`<text class="sm t3" x="${padL-9}" y="${y+3.5}" text-anchor="end">${fmt(Math.round(mx*(1-g/4)))}</text>`;}
+  cols.forEach((c,i)=>{s+=`<text class="sm t3" x="${X(i)}" y="${y0+20}" text-anchor="middle">${esc(c)}</text>`;});
+  const Yv=Y2;
+  if(baseline!=null){
+    /* shade the gap between the curve and the baseline: the gap is the lift */
+    const sr0=series[0];
+    let area='M'+X(0)+' '+Yv(sr0.vals[0]);
+    sr0.vals.forEach((v,i)=>{area+=' L'+X(i).toFixed(1)+' '+Yv(v).toFixed(1);});
+    area+=' L'+X(n-1).toFixed(1)+' '+Yv(baseline).toFixed(1)+' L'+X(0).toFixed(1)+' '+Yv(baseline).toFixed(1)+' Z';
+    s+=`<path d="${area}" fill="${sr0.color}" opacity=".13"/>`;
+    s+=`<line x1="${padL}" x2="${W-padR}" y1="${Yv(baseline)}" y2="${Yv(baseline)}" stroke="var(--neutral)" stroke-width="1.8" stroke-dasharray="6 5"/>`;
+    if(baseLab) s+=`<text class="sm t3" x="${padL+4}" y="${Yv(baseline)+15}">${esc(baseLab)}</text>`;
+    s+=`<text class="val t3" x="${W-padR+7}" y="${Yv(baseline)+4}">${baseline}</text>`;
+  }
+  series.forEach(sr=>{
+    let d=''; sr.vals.forEach((v,i)=>{d+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)+' ';});
+    s+=`<path d="${d}" fill="none" stroke="${sr.color}" stroke-width="2.5" stroke-linejoin="round"/>`;
+    sr.vals.forEach((v,i)=>{
+      s+=`<circle cx="${X(i)}" cy="${Y(v)}" r="4.5" fill="${sr.color}" data-tip="<b>${esc(sr.label)}</b><div class=k>${esc(cols[i])}</div>${fmt(v)}"/>`;});
+    s+=`<text class="val" x="${X(n-1)+9}" y="${Y(sr.vals[n-1])+4}" fill="${sr.color}">${esc(sr.label)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+
+/* net flow: bars = the month's net change, line = the running total */
+function netFlow(rows,{startTotal,fmt=v=>v.toLocaleString()}={}){
+  const W=1080,h=360,padL=70,padR=96,y0=h-62,topY=44, zoneH=(y0-topY);
+  const n=rows.length, X=i=>padL+i*(W-padL-padR)/(n-1);
+  const nets=rows.map(r=>r.started-r.stopped);
+  const mxN=Math.max(...nets.map(Math.abs))*1.25;
+  const mid=topY+zoneH*0.62, Yn=v=>mid-(v/mxN)*(zoneH*0.36);
+  let run=startTotal; const totals=rows.map(r=>{run+=r.started-r.stopped; return run;});
+  const loT=Math.min(...totals,startTotal), hiT=Math.max(...totals,startTotal);
+  const padTot=(hiT-loT)*0.9+1, Yt=v=>topY+zoneH*0.30*(1-(v-loT+padTot*0.3)/((hiT-loT)+padTot));
+  let s='';
+  s+=`<text class="sm t3" x="${padL}" y="${topY-16}">ACTIVE PLANS (running total)</text>`;
+  s+=`<text class="sm t3" x="${padL}" y="${mid-zoneH*0.36-12}">NET CHANGE EACH MONTH</text>`;
+  /* running total */
+  let d=''; totals.forEach((v,i)=>{d+=(i?'L':'M')+X(i).toFixed(1)+' '+Yt(v).toFixed(1)+' ';});
+  s+=`<path d="${d}" fill="none" stroke="${PURPLE}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  totals.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Yt(v)}" r="4" fill="${PURPLE}" data-tip="<b>${esc(rows[i].m)}</b><div class=k>active plans</div>${fmt(v)}"/>`;});
+  s+=`<text class="val" x="${X(n-1)+10}" y="${Yt(totals[n-1])+4}" fill="${PURPLE}">${fmt(totals[n-1])} plans</text>`;
+  /* net bars */
+  s+=`<line class="axis" x1="${padL-10}" x2="${W-padR+6}" y1="${mid}" y2="${mid}"/>`;
+  const bw=Math.min(40,(W-padL-padR)/n*0.56);
+  rows.forEach((r,i)=>{
+    const v=r.started-r.stopped, y=v>=0?Yn(v):mid, hh=Math.abs(Yn(v)-mid);
+    s+=`<rect x="${X(i)-bw/2}" y="${y}" width="${bw}" height="${Math.max(hh,1.5)}" rx="4" fill="${v>=0?GREEN:RED}" data-tip="<b>${esc(r.m)}</b><div class=k>${fmt(r.started)} started · ${fmt(r.stopped)} stopped</div>net ${v>=0?'+':''}${fmt(v)}"/>`;
+    s+=`<text class="sm" x="${X(i)}" y="${v>=0?y-6:y+hh+13}" text-anchor="middle" fill="${v>=0?GREEN:RED}">${v>=0?'+':''}${v}</text>`;
+    s+=`<text class="sm t3" x="${X(i)}" y="${y0+22}" text-anchor="middle">${esc(r.m)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+
+/* cumulative curve over many columns: gridlines, end labels only, legend carries the names.
+   FA's trend() is built for four or five columns; twelve crowds its per-point labels. */
+function curve(series,{cols,unit='%',h=312,xLab='',yLab='',baseline=null,baseLab='',mark=null}={}){
+  const W=520,padT=32,padB=42,padL=38,padR=52,plotH=h-padT-padB;
+  const n=cols.length, X=i=>padL+(W-padL-padR)*i/(n-1);
+  const mx=Math.max(...series.flatMap(sr=>sr.vals),baseline||0)*1.14;
+  const Y=v=>padT+plotH*(1-v/mx); let s='';
+  if(yLab) s+=`<text class="sm t3" x="${padL-34}" y="${padT-12}">${esc(yLab)}</text>`;
+  /* round the axis top up to a clean step so ticks never repeat after rounding */
+  const rawStep=mx/4, mag=Math.pow(10,Math.floor(Math.log10(rawStep)));
+  const step=[1,2,2.5,5,10].map(k=>k*mag).find(k=>k>=rawStep)||10*mag;
+  const top=step*4, dec=step<1?(step<0.2?2:1):0;
+  const Y2=v=>padT+plotH*(1-v/top);
+  for(let g=0;g<=4;g++){const v=step*(4-g), y=Y2(v);
+    s+=`<line class="axis" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`;
+    s+=`<text class="sm t3" x="${padL-7}" y="${y+3.5}" text-anchor="end">${v.toFixed(dec)}${unit}</text>`;}
+  cols.forEach((c,i)=>{if(n<=7||i%2===1||i===n-1)
+    s+=`<text class="sm t3" x="${X(i)}" y="${h-padB+17}" text-anchor="middle">${esc(c)}</text>`;});
+  if(xLab) s+=`<text class="sm t3" x="${(padL+W-padR)/2}" y="${h-padB+33}" text-anchor="middle">${esc(xLab)}</text>`;
+  const Yv=Y2;
+  if(baseline!=null){
+    /* shade the gap between the curve and the baseline: the gap is the lift */
+    const sr0=series[0];
+    let area='M'+X(0)+' '+Yv(sr0.vals[0]);
+    sr0.vals.forEach((v,i)=>{area+=' L'+X(i).toFixed(1)+' '+Yv(v).toFixed(1);});
+    area+=' L'+X(n-1).toFixed(1)+' '+Yv(baseline).toFixed(1)+' L'+X(0).toFixed(1)+' '+Yv(baseline).toFixed(1)+' Z';
+    s+=`<path d="${area}" fill="${sr0.color}" opacity=".13"/>`;
+    s+=`<line x1="${padL}" x2="${W-padR}" y1="${Yv(baseline)}" y2="${Yv(baseline)}" stroke="var(--neutral)" stroke-width="1.8" stroke-dasharray="6 5"/>`;
+    if(baseLab) s+=`<text class="sm t3" x="${padL+4}" y="${Yv(baseline)+15}">${esc(baseLab)}</text>`;
+    s+=`<text class="val t3" x="${W-padR+7}" y="${Yv(baseline)+4}">${baseline}</text>`;
+  }
+  series.forEach(sr=>{
+    let d=''; sr.vals.forEach((v,i)=>{d+=(i?'L':'M')+X(i).toFixed(1)+' '+Yv(v).toFixed(1)+' ';});
+    s+=`<path d="${d}" fill="none" stroke="${sr.color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`;
+    sr.vals.forEach((v,i)=>{s+=`<circle cx="${X(i)}" cy="${Yv(v)}" r="3.2" fill="${sr.color}" data-tip="<b>${esc(sr.label)}</b><div class=k>${esc(cols[i])}</div>${v.toFixed(dec||1)}${unit}"/>`;});
+    const last=sr.vals[n-1];
+    s+=`<text class="val" x="${W-padR+7}" y="${Yv(last)+4}" fill="${sr.color}">${last.toFixed(dec)}${unit}</text>`;
+    /* one callout on the point that carries the finding, instead of labelling all of them */
+    if(mark!=null&&sr===series[0]){
+      const v=sr.vals[mark];
+      s+=`<circle cx="${X(mark)}" cy="${Yv(v)}" r="5.5" fill="${sr.color}" stroke="var(--v4-surface)" stroke-width="2"/>`;
+      s+=`<text class="val" x="${X(mark)}" y="${Yv(v)-11}" text-anchor="middle" fill="${sr.color}" stroke="var(--v4-surface)" stroke-width="4" paint-order="stroke">${v.toFixed(1)}${unit}</text>`;
+    }
+  });
+  return svg(W,h,s);
+}
+
+
+/* full-width horizontal bars, 1080 canvas — for span2 cards with long labels */
+function barsHWide(rows,{fmt=v=>v,rowH=30,labelW=300}={}){
+  const W=1080,padR=92,padT=6,h=padT*2+rows.length*rowH;
+  const mx=Math.max(...rows.map(r=>r.v),0), plotW=W-labelW-padR; let s='';
+  rows.forEach((r,i)=>{
+    const y=padT+i*rowH, bw=r.v/mx*plotW, cy=y+rowH/2;
+    s+=`<text class="lbl t2" x="${labelW-12}" y="${cy+4}" text-anchor="end">${esc(r.label)}</text>`;
+    s+=`<rect x="${labelW}" y="${y+5}" width="${Math.max(bw,2)}" height="${rowH-11}" rx="4" fill="${r.color||PURPLE}" data-tip="${esc(r.label)}: <b>${r.vlabel??fmt(r.v)}</b>"/>`;
+    s+=`<text class="val t1" x="${labelW+bw+9}" y="${cy+4}">${r.vlabel??fmt(r.v)}</text>`;
+  });
+  return svg(W,h,s);
+}
+
+/* ================= PNG export (per-card download) ================= */
+const DL_ICON='<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.8v7.6"/><path d="m4.1 6.6 2.9 2.8 2.9-2.8"/><path d="M2.2 12.2h9.6"/></svg>';
+const OK_ICON='<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2.6 7.6 2.9 2.9 6-6.9"/></svg>';
+let _fontCssP=null;
+function fontCssInline(){ /* Geist woff2 as data: URIs so the rasterized SVG document can use the page font */
+  if(_fontCssP) return _fontCssP;
+  _fontCssP=(async()=>{
+    const raw=await (await fetch('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap')).text();
+    const css=raw.split(/(?=\/\* )/).filter(b=>/^\/\* latin/.test(b)).join('')||raw; /* latin subsets only — keeps the data URL small */
+    const urls=[...new Set([...css.matchAll(/url\((https:[^)]+)\)/g)].map(m=>m[1]))];
+    const pairs=await Promise.all(urls.map(async u=>{
+      const b=await (await fetch(u)).blob();
+      const d=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(b);});
+      return [u,d];
+    }));
+    return pairs.reduce((s,[u,d])=>s.split(u).join(d),css);
+  })().catch(()=>'');
+  return _fontCssP;
+}
+const SVG_COPY=['fill','fill-opacity','stroke','stroke-width','stroke-dasharray','stroke-linecap','stroke-linejoin','opacity','font-family','font-size','font-weight','font-style','letter-spacing','text-anchor','dominant-baseline','overflow','paint-order','mix-blend-mode','transform','transform-origin'];
+function cloneStyled(src){ /* deep clone with computed styles inlined; buttons (incl. this one) excluded */
+  const dst=src.cloneNode(false), cs=getComputedStyle(src);
+  if(src.namespaceURI==='http://www.w3.org/2000/svg'){
+    SVG_COPY.forEach(p=>dst.style.setProperty(p,cs.getPropertyValue(p)));
+    if(src.tagName.toLowerCase()==='svg'){const r=src.getBoundingClientRect();dst.style.setProperty('display','block');dst.style.setProperty('width',r.width+'px');dst.style.setProperty('height',r.height+'px');}
+  }else{
+    for(let i=0;i<cs.length;i++){const p=cs[i];dst.style.setProperty(p,cs.getPropertyValue(p));}
+    if(cs.display!=='inline'){const r=src.getBoundingClientRect();dst.style.setProperty('box-sizing','border-box');dst.style.setProperty('width',r.width+'px');dst.style.setProperty('height',r.height+'px');}
+  }
+  src.childNodes.forEach(ch=>{
+    if(ch.nodeType===1){ if(ch.tagName==='BUTTON') return; dst.appendChild(cloneStyled(ch)); }
+    else if(ch.nodeType===3) dst.appendChild(ch.cloneNode());
+  });
+  return dst;
+}
+async function cardToPng(card){
+  const fonts=await fontCssInline();
+  const r=card.getBoundingClientRect(), w=Math.ceil(r.width), h=Math.ceil(r.height), pad=16, scale=2;
+  const clone=cloneStyled(card);
+  clone.setAttribute('xmlns','http://www.w3.org/1999/xhtml');
+  const xml=new XMLSerializer().serializeToString(clone);
+  const W=w+pad*2, H=h+pad*2;
+  const src=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">${fonts?'<style>'+fonts+'</style>':''}<foreignObject x="${pad}" y="${pad}" width="${w}" height="${h}">${xml}</foreignObject></svg>`;
+  /* data: URL, not a blob URL — blob URLs taint the canvas when the page is opened from file:// */
+  const img=new Image(); img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(src); await img.decode();
+  const cv=document.createElement('canvas'); cv.width=W*scale; cv.height=H*scale;
+  const ctx=cv.getContext('2d'); ctx.scale(scale,scale);
+  ctx.fillStyle=getComputedStyle(document.body).backgroundColor; ctx.fillRect(0,0,W,H);
+  ctx.drawImage(img,0,0,W,H);
+  return await new Promise((res,rej)=>cv.toBlob(b=>b?res(b):rej(new Error('toBlob failed')),'image/png'));
+}
+async function exportCard(card,btn){
+  if(btn.classList.contains('busy')) return;
+  btn.classList.add('busy');
+  try{
+    const png=await cardToPng(card);
+    const name='fa-'+((card.querySelector('h3')||{}).textContent||'chart').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)+'.png';
+    const a=document.createElement('a'); a.href=URL.createObjectURL(png); a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+    btn.innerHTML=OK_ICON; btn.classList.add('done');
+    setTimeout(()=>{btn.innerHTML=DL_ICON;btn.classList.remove('done');},1500);
+  }catch(e){ console.error('PNG export failed:',e); }
+  finally{ btn.classList.remove('busy'); }
+}
+
+/* ================= copy ================= */
+document.getElementById('lede').textContent =
+ 'The sustainer program is '+(S_.annual_rev/B_.annual_email_rev*100).toFixed(0)+'% of what email raises, and it turns over every year. This page covers the plans, the annual givers, and what it costs when either one leaves.';
+document.getElementById('strip').innerHTML=[
+  [S_.active_plans.toLocaleString(),'active sustainer plans'],
+  [fmt$(S_.annual_rev),'a year from sustainers'],
+  [Math.round(S_.annual_stops).toLocaleString(),'plans stopped this year'],
+  [C_.annual_givers.toLocaleString(),'annual givers'],
+  ['<em>'+DN_.risk_deciles[0]+'%</em>','of stops sit in one decile'],
+].map(([n,k])=>'<div class="cell"><div class="n">'+n+'</div><div class="k">'+k+'</div></div>').join('');
+const SECTIONS=[
+ {n:1,t:'Sustainers',sub:'The recurring stream: how plans start, how they stop, and how early the stop can be seen.'},
+ {n:2,t:'Annual givers',sub:'The supporters who give once a year, what happens the following year, and when the next gift arrives.'},
+ {n:3,t:'What leaving costs',sub:'The future giving behind one unsubscribe, by the kind of supporter who leaves.'}];
+const CARDS=[
+{sec:1,id:'sustainers',span:true,title:'The sustainer program, in six numbers',
+ cap:'The recurring stream behind the file. A plan is valued on the stop rate of the plans in question, so a plan started this month is worth less than the program average.',
+ tiles:[[S_.active_plans.toLocaleString(),'active plans'],['$'+S_.avg_plan_gift.toFixed(0),'average sustainer gift'],
+        [fmt$(S_.annual_rev),'a year'],['26 mo','median plan life'],
+        ['$'+Math.round(S_.plan_value).toLocaleString(),'value of a mature plan'],['$'+Math.round(S_.young_plan_value).toLocaleString(),'value of a new plan']],
+ read:`The sustainer stream is <b>${(S_.annual_rev/B_.annual_email_rev*100).toFixed(0)}%</b> of email-influenced revenue and it turns over: <b>${Math.round(S_.annual_stops).toLocaleString()}</b> plans stopped this year against <b>${DN_.plans_started_yr.toLocaleString()}</b> started, a net gain of <b>${(DN_.plans_started_yr-Math.round(S_.annual_stops)).toLocaleString()}</b>.`},
+
+{sec:1,id:'sustainers',span:true,title:'Three months produce nearly all the sustainer growth',
+ cap:'Three views of the same year: the running plan count, the starts and stops behind it, and the net change each month. September 2025 to August 2026.',
+ legend:[['net gain',GREEN],['net loss',RED],['active plans',PURPLE]],
+ plot:()=>netFlow(C_.plans,{startTotal:S_.active_plans-C_.plans.reduce((a,p)=>a+p.started-p.stopped,0)}),
+ read:(()=>{const nets=C_.plans.map(p=>({m:p.m,v:p.started-p.stopped}));
+   const tot=nets.reduce((a,b)=>a+b.v,0);
+   const top=[...nets].sort((a,b)=>b.v-a.v).slice(0,3);
+   return `Stops run between <b>${Math.min(...C_.plans.map(p=>p.stopped)).toLocaleString()}</b> and <b>${Math.max(...C_.plans.map(p=>p.stopped)).toLocaleString()}</b> every month no matter what goes out, so the net is decided entirely by starts. Year end and the two emergency appeals (<b>${top.map(t=>t.m).join(', ')}</b>) produce <b>${Math.round(top.reduce((a,b)=>a+b.v,0)/tot*100)}%</b> of the year's net growth of <b>${tot.toLocaleString()}</b> plans. The other nine months are close to flat.`;})()},
+
+{sec:1,id:'warnings',title:'The signs a plan is about to stop',
+ cap:'Odds of a plan stopping within sixty days against a plan carrying none of these signs, each measured with plan age and gift size held constant. Bars show the likely range.',
+ plot:()=>barsH(DN_.warnings.map(w=>({label:w[0],v:w[1],color:w[1]>=3?RED:ORANGE,
+   vlabel:w[1].toFixed(1)+'×',tip:'range '+w[2].toFixed(1)+'× to '+w[3].toFixed(1)+'×'})),
+   {labelW:230,rowH:34}),
+ read:`A failed payment is the strongest single sign at <b>4.6×</b>, and it is the one already sitting in the payment processor. The engagement signs arrive earlier, which is what makes them useful for a save.`},
+
+{sec:1,id:'warnings',title:'The risk score shows where to concentrate',
+ cap:'Share of the year’s plan stops sitting in each decile of the risk score, highest risk first. The score combines the six signs above.',
+ plot:()=>barsH(DN_.risk_deciles.map((v,i)=>({label:i===0?'Highest risk decile':'Decile '+(i+1),v:v,
+   color:i===0?PURPLE:(i<3?PALT:'var(--neutral)'),vlabel:v+'%'})),{labelW:150,rowH:26}),
+ read:`The top decile holds <b>${DN_.risk_deciles[0]}%</b> of the year’s stops, about <b>${fmtN(Math.round(S_.annual_stops*DN_.risk_deciles[0]/100))}</b> plans. Working the top three deciles reaches <b>${DN_.risk_deciles.slice(0,3).reduce((a,b)=>a+b,0)}%</b> of stops while contacting three in ten sustainers.`},
+
+{sec:2,id:'annual givers',title:'Seven in ten annual givers did not give the next year',
+ cap:`The ${fmtN(C_.annual_givers)} supporters who gave at least once in the prior year, by whether they gave again in the study year.`,
+ plot:()=>stackedH([
+   {label:'Gave again',v:Math.round(C_.annual_givers*DN_.gave_again_next_year),color:PURPLE},
+   {label:'Did not give again',v:Math.round(C_.annual_givers*(1-DN_.gave_again_next_year)),color:'var(--neutral)'}]),
+ read:`<b>${(DN_.gave_again_next_year*100).toFixed(0)}%</b> gave again. The other <b>${((1-DN_.gave_again_next_year)*100).toFixed(0)}%</b> are still on the file and still receiving email, so they are reachable rather than lost.`},
+
+{sec:2,id:'annual givers',title:'Annual givers give again at the anniversary',
+ cap:'Share of the year’s repeat gifts from annual givers, by how many months had passed since their previous gift.',
+ plot:()=>curve([{label:'Share of repeat gifts',vals:DN_.anniversary,color:PURPLE}],
+   {cols:DN_.anniversary.map((_,i)=>String(i+1)),unit:'%',mark:11,
+    xLab:'months since the previous gift',yLab:'share of the year\u2019s repeat gifts'}),
+ read:(()=>{const a=DN_.anniversary, early=a.slice(0,8).reduce((x,y)=>x+y,0)/8;
+   return `<b>${a[11]}%</b> of repeat gifts land in month twelve, the single biggest month and <b>${(a[11]/early).toFixed(1)} times</b> the share of a typical month in the first eight. The run-up starts around month nine. An ask timed to the anniversary of the last gift meets a supporter who was already going to give.`;})()},
+
+{sec:2,id:'the groups',title:'Seven in ten future dollars sit with the sustainers',
+ cap:'Where the future giving on the file sits, by donor group. Segment width is the group\u2019s total future value. Hover for the per-supporter figure behind it.',
+ plot:()=>stackedH(C_.groups.map((g,i)=>({label:g.k,v:g.total,
+   color:[PURPLE,PALT,'var(--neutral)','var(--v4-text-4)'][i]})),{fmt:v=>fmt$(v)}),
+ read:`Sustainers are <b>${(C_.groups[0].n/B_.mailed*100).toFixed(1)}%</b> of the emailed file and <b>${Math.round(C_.groups[0].share*100)}%</b> of its future giving, because one plan is worth <b>$${C_.groups[0].value.toLocaleString()}</b> against <b>$${C_.groups[2].value}</b> for a supporter who has given once. Converting one supporter to a plan is worth about <b>${Math.round(C_.groups[0].value/C_.groups[2].value)}</b> first gifts.`},
+
+{sec:3,id:'attrition',span:true,title:'Where the cost of an unsubscribe actually sits',
+ cap:'What each kind of supporter contributes to the blended cost of one unsubscribe: how often they are the one leaving, times what leaving costs them. An unsubscribe is an email event, so for a sustainer it is priced as the plan value put at risk by the higher stop rate, never as the whole plan.',
+ html:()=>'<table class="rec"><thead><tr><th style="width:34%">Who leaves</th><th style="text-align:right">Share of unsubscribes</th><th style="text-align:right">Costs, each</th><th style="text-align:right">Contribution to the blended cost</th></tr></thead><tbody>'+
+   D_.unsub_groups.map(g=>'<tr><td class="ttl">'+g.k+'</td><td style="text-align:right">'+(g.share*100).toFixed(1)+'%</td><td style="text-align:right">$'+g.value.toLocaleString(undefined,{maximumFractionDigits:0})+'</td><td class="rng" style="text-align:right">$'+g.contrib.toFixed(2)+'</td></tr>').join('')+
+   '<tr><td class="ttl"><b>One unsubscribe, blended</b></td><td colspan="2"></td><td class="rng" style="text-align:right">$'+D_.unsub_cost.toFixed(2)+'</td></tr></tbody></table>',
+ read:`A sustainer unsubscribing does not stop the plan. The card keeps charging. What changes is the odds it stops, <b>3.4\u00d7</b> within sixty days, which costs <b>$${Math.round(S_.unsub_cost)}</b> of expected plan value rather than the <b>$${Math.round(S_.plan_value).toLocaleString()}</b> plan. Sustainers are half a percent of unsubscribes and still <b>${Math.round(D_.unsub_groups[4].contrib/D_.unsub_cost*100)}%</b> of the cost. Blended, one unsubscribe costs <b>$${D_.unsub_cost.toFixed(2)}</b>, and <b>${fmtN(C_.leaving.unsub)}</b> happened this year.`},
+];
+
+document.getElementById('foot').innerHTML=
+ '<b>What this is.</b> A demonstration of a Chorus audience intelligence study. Halyard International is a fictional international relief organization and every figure on this site is constructed. No real supporter, gift, or send appears anywhere.<br>'+
+ '<b>What was read.</b> '+fmtN(B_.deliveries)+' sends to '+fmtN(B_.mailed)+' supporters, September 2025 to August 2026, joined to gifts, advocacy actions, unsubscribes, and sustainer plans.<br>'+
+ '<b>How to read a rate.</b> Every rate per person per month runs on supporter-months, '+fmtN(B_.supporter_months)+' of them, not on people multiplied by twelve.<br>'+
+ '<b>What the study is not.</b> Every finding here is an association measured across one year with the stated controls. Nothing on this site is a randomized test, and the two interventions marked Test first need a holdout before anyone counts the money.';
+
+/* ================= render ================= */
+const main=document.getElementById('main');
+SECTIONS.forEach(S=>{
+  const cards=CARDS.filter(c=>c.sec===S.n); if(!cards.length) return;
+  const sec=document.createElement('section'); sec.className='job';
+  sec.innerHTML='<div class="sec-head"><span class="sec-num">0'+S.n+'</span><h2>'+S.t+'</h2></div><p class="sec-sub">'+S.sub+'</p><div class="grid"></div>';
+  const grid=sec.querySelector('.grid');
+  cards.forEach(c=>{
+    const el=document.createElement('div'); el.className='card'+(c.span?' span2':'');
+    let inner='<button class="dl" type="button" title="Download as image" aria-label="Download this chart as a PNG image">'+DL_ICON+'</button>'+
+      '<span class="chip">'+esc(c.id)+'</span><h3>'+c.title+'</h3><div class="cap">'+c.cap+'</div>';
+    if(c.legend) inner+='<div class="legend">'+c.legend.map(([t,col])=>'<span class="sw"><span class="box" style="background:'+col+'"></span>'+esc(t)+'</span>').join('')+'</div>';
+    if(c.tiles){ const N=c.tiles.length, cols=N<=5?N:(N%4===0?4:(N%3===0?3:4));
+      inner+='<div class="tiles" style="grid-template-columns:repeat('+cols+',1fr)">'+
+        c.tiles.map(t=>'<div class="tile"><div class="n"'+(t[2]?' style="color:'+t[2]+'"':'')+'>'+t[0]+'</div><div class="k">'+t[1]+'</div></div>').join('')+'</div>'; }
+    if(c.plot) inner+='<div class="plot">'+c.plot()+'</div>';
+    if(c.html) inner+='<div class="plot">'+c.html()+'</div>';
+    if(c.read) inner+='<div class="read">'+c.read+'</div>';
+    el.innerHTML=inner; grid.appendChild(el);
+    if(c.mount) c.mount(el);
+    el.querySelector('.dl').addEventListener('click',()=>exportCard(el,el.querySelector('.dl')));
+  });
+  main.appendChild(sec); bindTips(sec);
+});
+const _tb=document.getElementById('themeBtn'), _rt=document.documentElement;
+_tb.addEventListener('click',()=>{const d=_rt.getAttribute('data-theme')==='dark';
+  _rt.setAttribute('data-theme',d?'light':'dark'); _tb.innerHTML=d?'\u25D6 Dark':'\u2600 Light';});
+
+</script>
+</body>
+</html>
