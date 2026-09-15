@@ -1,6 +1,7 @@
 {
  "base": {
-  "org": "Halyard International",
+  "org": "Example Relief International",
+  "org_short": "Example Relief",
   "study_from": "2025-09",
   "study_to": "2026-08",
   "list_size": 2140000,
