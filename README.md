@@ -2,6 +2,8 @@
 
 A sales demonstration of a Chorus audience intelligence study.
 
+Live: https://tareqchorus.github.io/example-relief-findings/
+
 **Example Relief International is not a real organization.** Every figure, supporter,
 gift and send on this site was constructed for the demo. Nothing here is client data.
 
