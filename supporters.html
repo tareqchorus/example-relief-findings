@@ -175,7 +175,7 @@ table.rec td.rng{white-space:nowrap;font-weight:600;color:var(--v4-text-1)}
 <script>
 
 /* ================= model ================= */
-const M=JSON.parse(document.getElementById('halyard-model').textContent);
+const M=JSON.parse(document.getElementById('demo-model').textContent);
 const B_=M.base, R_=M.rates, S_=M.sustainers, C_=M.charts, D_=M.derived, E_=M.effects, DN_=M.donors;
 function fmt$(n){return n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1e3?'$'+Math.round(n/1e3)+'K':'$'+Math.round(n)}
 
