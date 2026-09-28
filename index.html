@@ -910,7 +910,7 @@ const CARDS=[
  read:`Each extra send in a month raises the odds of unsubscribing by <b>${((E_.volume_unsub_or-1)*100).toFixed(0)}%</b>. Going from four sends a month to eight roughly doubles the rate.`},
 
 {sec:2,id:'retention',title:'Going inactive after a gift backfires',
- cap:'Share who gave again within ninety days, by how long ${B_.org_short} waited before sending anything after the first gift.',
+ cap:'Share who gave again within ninety days, by how long '+B_.org_short+' waited before sending anything after the first gift.',
  plot:()=>barsV(C_.post_gift.map((p,i)=>({label:p.k,bars:[{v:p.v,color:i===3?RED:PURPLE,vlabel:p.v.toFixed(1)+'%'}]})),{h:250}),
  read:`Waiting more than three weeks after a gift cuts the second-gift rate to <b>${E_.post_gift_silence.toFixed(2)} times</b> the rate of supporters contacted within a week.`},
 
