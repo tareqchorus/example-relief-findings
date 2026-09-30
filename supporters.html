@@ -424,7 +424,7 @@ async function exportCard(card,btn){
   btn.classList.add('busy');
   try{
     const png=await cardToPng(card);
-    const name='fa-'+((card.querySelector('h3')||{}).textContent||'chart').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)+'.png';
+    const name='example-relief-'+((card.querySelector('h3')||{}).textContent||'chart').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)+'.png';
     const a=document.createElement('a'); a.href=URL.createObjectURL(png); a.download=name;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(()=>URL.revokeObjectURL(a.href),5000);
